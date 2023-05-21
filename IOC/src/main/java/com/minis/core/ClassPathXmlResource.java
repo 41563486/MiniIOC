@@ -1,4 +1,4 @@
-package com.minis;
+package com.minis.core;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 
 
-public class ClassPathXmlResource implements Resource{
+public class ClassPathXmlResource implements Resource {
     Document document;
     Element rootElement;
     Iterator<Element> elementIterator;

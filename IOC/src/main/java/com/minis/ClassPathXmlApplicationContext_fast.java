@@ -1,5 +1,6 @@
 package com.minis;
 
+import com.minis.beans.BeanDefinition;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -12,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 
-public class ClassPathXmlApplicationContext {
+public class ClassPathXmlApplicationContext_fast {
     private List<BeanDefinition>  beanDefinitions=new ArrayList<>();
     private Map<String, Object> singletons=new HashMap<>();
     //构造器获取外部配置，解析bean的定义，形成内存映像
 
 
-    public ClassPathXmlApplicationContext(String fileName) {
+    public ClassPathXmlApplicationContext_fast(String fileName) {
             this.readXml(fileName);
             this.instanceBeans();
     }

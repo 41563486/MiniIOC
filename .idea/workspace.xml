@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="" />
+    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mini IOC.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PoxMtefoeZECdVUNaTxv5tcY4u" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -16,9 +61,61 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "E:/笔记/java/项目实战/手写minispring/代码/Mini IOC/IOC/build.gradle",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "7245a636843f38ae56d5862d502a4303"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.minis.test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.minis.test" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.minis.test.Test1" />
+      <module name="IOC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.minis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Test1" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -27,8 +124,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684137192295</updated>
+      <workItem from="1684137193660" duration="6889000" />
+      <workItem from="1684219492740" duration="5789000" />
+      <workItem from="1684306480382" duration="10798000" />
+      <workItem from="1684394604333" duration="7669000" />
+      <workItem from="1684456934771" duration="1120000" />
+      <workItem from="1684458784838" duration="672000" />
+      <workItem from="1684459471700" duration="1403000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -40,5 +147,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
