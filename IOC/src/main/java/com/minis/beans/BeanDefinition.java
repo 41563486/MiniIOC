@@ -1,5 +1,11 @@
 package com.minis.beans;
 
+//scope属性是判断该bean是什么模式（单例或者原型模式）
+// lazyInit表示加载时是否需要初始化,initMethodName为初始化话方法的名称
+//constructorArgumentValues构造器参数
+//dependsOn表示bean与bean间的依赖关系
+//beanClass  bean对应的映射类
+
 public class BeanDefinition {
     private String id;
     private String className;
@@ -7,13 +13,14 @@ public class BeanDefinition {
     String SCOPE_SINGLETON = "singleton";
     String SCOPE_PROTOTYPE = "prototype";
 
-    private boolean lazyInit = false;
+    private boolean lazyInit = true;
     private String[] dependsOn;
     private ArgumentValues constructorArgumentValues;
 
     private PropertyValues propertyValues;
     private String initMethodName;
 
+    //volatile保证可见性，该私有变量更新时会立刻更新到内存中，禁止指令重排序（位于修饰词后面的语句）
     private volatile Object beanClass;
 
     private String scope=SCOPE_SINGLETON;
@@ -57,6 +64,10 @@ public class BeanDefinition {
     public PropertyValues getPropertyValues() {
         return propertyValues;
     }
+    public boolean isSingleton() {
+        return SCOPE_SINGLETON.equals(scope);
+    }
+
 
     public void setPropertyValues(PropertyValues propertyValues) {
         this.propertyValues = propertyValues;

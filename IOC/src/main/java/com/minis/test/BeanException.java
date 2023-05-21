@@ -1,4 +1,6 @@
-package com.minis.beans;
+package com.minis.test;
+
+
 
 public class BeanException extends Exception{
     public BeanException(String message) {

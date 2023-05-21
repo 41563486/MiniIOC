@@ -5,33 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Mini IOC.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContextx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseBaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BeanException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/ClassPathXmlApplicationContext_fast.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanDefinition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/SimpleBeanFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/XmlBeanDefinitionReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/ClassPathXmlResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/Test1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/resources/main/bean.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast123.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeansException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/resources/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/resources/bean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/bean.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext_fast.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mini IOC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mini IOC.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bean.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,21 +92,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "E:/笔记/java/项目实战/手写minispring/代码/Mini IOC/IOC/build.gradle",
+    "last_opened_file_path": "E:/笔记/java/项目实战/手写minispring/代码/Mini IOC/IOC",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
     "spring.configuration.checksum": "7245a636843f38ae56d5862d502a4303"
   }
 }]]></component>
@@ -82,9 +109,10 @@
       <recent name="com.minis.test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC" />
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\beans" />
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -96,9 +124,22 @@
       <recent name="com.minis.test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.Test1">
     <configuration name="Test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.minis.test.Test1" />
+      <module name="IOC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.minis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_path" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.minis.test.test_path" />
       <module name="IOC" />
       <extension name="coverage">
         <pattern>
@@ -113,10 +154,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.Test1" />
+        <item itemvalue="应用程序.test_path" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="" />
@@ -131,6 +176,12 @@
       <workItem from="1684456934771" duration="1120000" />
       <workItem from="1684458784838" duration="672000" />
       <workItem from="1684459471700" duration="1403000" />
+      <workItem from="1684713923049" duration="5125000" />
+      <workItem from="1684800350871" duration="3270000" />
+      <workItem from="1684886965173" duration="8301000" />
+      <workItem from="1685095242128" duration="1362000" />
+      <workItem from="1685154952738" duration="8243000" />
+      <workItem from="1685172678253" duration="1477000" />
     </task>
     <servers />
   </component>

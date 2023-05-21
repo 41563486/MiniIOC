@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 
-public class ClassPathXmlApplicationContext_fast {
+public class ClassPathXmlApplicationContext_fast123 {
     private List<BeanDefinition>  beanDefinitions=new ArrayList<>();
     private Map<String, Object> singletons=new HashMap<>();
     //构造器获取外部配置，解析bean的定义，形成内存映像
 
 
-    public ClassPathXmlApplicationContext_fast(String fileName) {
+    public ClassPathXmlApplicationContext_fast123(String fileName) {
             this.readXml(fileName);
             this.instanceBeans();
     }

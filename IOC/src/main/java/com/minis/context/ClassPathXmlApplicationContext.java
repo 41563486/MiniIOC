@@ -1,30 +1,31 @@
 package com.minis.context;
 
 import com.minis.beans.*;
+
 import com.minis.core.ClassPathXmlResource;
 import com.minis.core.Resource;
 
-public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEventPublisher {
-    BeanFactory beanFactory;
+public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEventPublisher{
+    SimpleBeanFactory beanFactory;
 
-    //context负责整合容器的启动过程，读外部配置，解析bean定义，创建BeanFactory
-
-
-    public ClassPathXmlApplicationContext(String fileName) {
-        Resource resource = new ClassPathXmlResource(fileName);
-        SimpleBeanFactory beanFactory = new SimpleBeanFactory();
-        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
-        reader.LoadBeanDefinitions(resource);
-        this.beanFactory = beanFactory;
-    }
-    //context再对外提供一个getBean，底下就是调用的BeanFactory对应的方法
-
-    @Override
-    public void publishEvent(ApplicationEvent event) {
+    public ClassPathXmlApplicationContext(String fileName){
+        this(fileName, true);
     }
 
+    public ClassPathXmlApplicationContext(String fileName, boolean isRefresh){
+        Resource res = new ClassPathXmlResource(fileName);
+        SimpleBeanFactory bf = new SimpleBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bf);
+        reader.loadBeanDefinitions(res);
+        this.beanFactory = bf;
+
+        if (isRefresh) {
+            this.beanFactory.refresh();
+        }
+    }
+
     @Override
-    public Object getBean(String beanName) throws BeanException {
+    public Object getBean(String beanName) throws BeansException {
         return this.beanFactory.getBean(beanName);
     }
 
@@ -33,27 +34,32 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
         return this.beanFactory.ContainsBean(name);
     }
 
-    @Override
+
+
     public void registerBean(String beanName, Object obj) {
-    this.beanFactory.registerBean(beanName,obj);
+        this.beanFactory.registerBean(beanName, obj);
     }
 
-
+    @Override
+    public void publishEvent(ApplicationEvent event) {
+    }
 
     @Override
     public boolean isSingleton(String name) {
+        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public boolean isPrototype(String name) {
+        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public Class<?> getType(String name) {
+        // TODO Auto-generated method stub
         return null;
     }
-
 
 }

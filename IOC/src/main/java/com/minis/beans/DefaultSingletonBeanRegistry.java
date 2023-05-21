@@ -1,50 +1,93 @@
 package com.minis.beans;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
-    //容器中存放所有bean的名称的列表
-    protected List<String> beanNames = new ArrayList<>();
-    //实例中存放所有bean实例的map
-    //ConcurrentHashMap允许多个线程同时读写，锁的粒度较小。不会锁住整个线程，使用了锁分段技术。内部的值是设定表的大小而不会动态调整
-    protected Map<String, Object> singletons = new ConcurrentHashMap<>(256);
+public class DefaultSingletonBeanRegistry  implements SingletonBeanRegistry {
+    protected List<String> beanNames=new ArrayList<>();
+    protected Map<String, Object> singletonObjects =new ConcurrentHashMap<>(256);
+    protected Map<String, Set<String>> dependentBeanMap = new ConcurrentHashMap<>(64);
+    protected Map<String,Set<String>> dependenciesForBeanMap = new ConcurrentHashMap<>(64);
 
-    //synchronized保护线程安全，阻塞其他访问的线程
+    @Override
     public void registerSingleton(String beanName, Object singletonObject) {
-        synchronized (this.singletons) {
-            this.singletons.put(beanName, singletonObject);
+        synchronized(this.singletonObjects) {
+            Object oldObject = this.singletonObjects.get(beanName);
+            if (oldObject != null) {
+                throw new IllegalStateException("Could not register object [" + singletonObject +
+                        "] under bean name '" + beanName + "': there is already object [" + oldObject + "] bound");
+            }
+
+            this.singletonObjects.put(beanName, singletonObject);
             this.beanNames.add(beanName);
-
+            System.out.println(" bean registerded............. " + beanName);
         }
-
     }
 
-    //获取bean单例方法
+    @Override
     public Object getSingleton(String beanName) {
-        return this.singletons.get(beanName);
+        return this.singletonObjects.get(beanName);
     }
 
-    //判断是否有bean单例
+    @Override
     public boolean containsSingleton(String beanName) {
-
-        return this.singletons.containsKey(beanName);
+        return this.singletonObjects.containsKey(beanName);
     }
 
-    //获取bean集合内部bean
+    @Override
     public String[] getSingletonNames() {
-        //将ArrayList转换成数组再强制转换成String数组
         return (String[]) this.beanNames.toArray();
     }
-    //删除bean单例，使用synchronize保证线程的安全性
-    public void removeSingleton(String beanName) {
-        synchronized (this.singletons) {
-            this.beanNames.remove(beanName);
-            this.singletons.remove(beanName);
 
+    protected void removeSingleton(String beanName) {
+        synchronized (this.singletonObjects) {
+            this.singletonObjects.remove(beanName);
+            this.beanNames.remove(beanName);
         }
     }
 
+    protected void registerDependentBean(String beanName, String dependentBeanName) {
+        Set<String> dependentBeans = this.dependentBeanMap.get(beanName);
+        if (dependentBeans != null && dependentBeans.contains(dependentBeanName)) {
+            return;
+        }
+
+        // No entry yet -> fully synchronized manipulation of the dependentBeans Set
+        synchronized (this.dependentBeanMap) {
+            dependentBeans = this.dependentBeanMap.get(beanName);
+            if (dependentBeans == null) {
+                dependentBeans = new LinkedHashSet<String>(8);
+                this.dependentBeanMap.put(beanName, dependentBeans);
+            }
+            dependentBeans.add(dependentBeanName);
+        }
+        synchronized (this.dependenciesForBeanMap) {
+            Set<String> dependenciesForBean = this.dependenciesForBeanMap.get(dependentBeanName);
+            if (dependenciesForBean == null) {
+                dependenciesForBean = new LinkedHashSet<String>(8);
+                this.dependenciesForBeanMap.put(dependentBeanName, dependenciesForBean);
+            }
+            dependenciesForBean.add(beanName);
+        }
+
+    }
+
+    protected boolean hasDependentBean(String beanName) {
+        return this.dependentBeanMap.containsKey(beanName);
+    }
+    protected String[] getDependentBeans(String beanName) {
+        Set<String> dependentBeans = this.dependentBeanMap.get(beanName);
+        if (dependentBeans == null) {
+            return new String[0];
+        }
+        return (String[]) dependentBeans.toArray();
+    }
+    protected String[] getDependenciesForBean(String beanName) {
+        Set<String> dependenciesForBean = this.dependenciesForBeanMap.get(beanName);
+        if (dependenciesForBean == null) {
+            return new String[0];
+        }
+        return (String[]) dependenciesForBean.toArray();
+
+    }
 }
