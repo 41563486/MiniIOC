@@ -1,5 +1,6 @@
 package com.minis.beans;
 
+//定义参数值类
 public class ArgumentValue {
     private Object value;
     private String type;

@@ -1,5 +1,9 @@
 package com.minis.beans;
 
+
+
+//这个类定义了xml中bean标签内含有的属性以及可选属性
+//注入bean的操作本质是给Bean的各个属性进行赋值
 public class BeanDefinition {
     private String id;
     private String className;
