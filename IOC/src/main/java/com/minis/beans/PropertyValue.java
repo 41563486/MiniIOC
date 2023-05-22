@@ -1,5 +1,6 @@
 package com.minis.beans;
 
+//xml属性标签的各个属性
 public class PropertyValue {
     private final String name;
     private final Object value;

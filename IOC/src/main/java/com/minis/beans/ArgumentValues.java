@@ -36,7 +36,7 @@ public class ArgumentValues {
 
     }
 
-    //添加参数值
+    //添加新参数值判空（使用迭代器）并覆盖
     private void addGenericArgumentValue(ArgumentValue newValue) {
         if (newValue.getName() != null) {
             for (Iterator<ArgumentValue> it = this.genericArgumentValues.iterator(); it.hasNext(); ) {
@@ -50,6 +50,7 @@ public class ArgumentValues {
         this.genericArgumentValues.add(newValue);
     }
 
+    //获取通用参数值的必需名称,使用增强for。判断名称是否统一如果是直接返回name
     public ArgumentValue getGenericArgumentValue(String requiredName) {
         for (ArgumentValue valueHolder : this.genericArgumentValues) {
             if (valueHolder.getName() != null &&
@@ -62,10 +63,12 @@ public class ArgumentValues {
 
     }
 
+    //获取参数值容器内的长度
     public int getArgumentCount() {
         return this.genericArgumentValues.size();
     }
 
+    //判空
     public boolean isEmpty() {
         return this.genericArgumentValues.isEmpty();
 
