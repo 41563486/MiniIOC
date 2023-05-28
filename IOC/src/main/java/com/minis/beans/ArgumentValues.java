@@ -5,13 +5,17 @@ import java.util.*;
 public class ArgumentValues {
     //    private  final Map<Integer,ArgumentValue> indexedArgumentValues=new HashMap<>(0);
 //    private  final List<ArgumentValue> genericArgumentValues=new LinkedList<>();
-    private final List<ArgumentValue> argumentValueList = new ArrayList<ArgumentValue>();
 
+    //该类不会被继承，且这个数组必须初始化
+    private final List<ArgumentValue> argumentValueList = new ArrayList<>();
+
+    //构造函数
     public ArgumentValues() {
     }
 
-    public void addArgumentValue( ArgumentValue newValue) {
-        this.argumentValueList.add( newValue);
+    //添加新的参数值，用arraylist内置api
+    public void addArgumentValue(ArgumentValue newValue) {
+        this.argumentValueList.add(newValue);
 
     }
 
@@ -19,6 +23,9 @@ public class ArgumentValues {
 //        return this.argumentValueList.containsValue(index);
 //
 //    }
+
+
+    //通过索引值获取参数值
     public ArgumentValue getIndexedArgumentValue(int index) {
         ArgumentValue argumentValue = this.argumentValueList.get(index);
         return argumentValue;
@@ -52,10 +59,13 @@ public class ArgumentValues {
 //        return null;
 //
 //    }
+
+    //获取参数值数组的大小
     public int getArgumentCount() {
         return this.argumentValueList.size();
     }
 
+    //判断参数值数组是否为空
     public boolean isEmpty() {
         return this.argumentValueList.isEmpty();
 
