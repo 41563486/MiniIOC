@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
+    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="注释修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +127,7 @@
       <workItem from="1685095242128" duration="1362000" />
       <workItem from="1685154952738" duration="8243000" />
       <workItem from="1685172678253" duration="1477000" />
-      <workItem from="1685241029433" duration="4782000" />
+      <workItem from="1685241029433" duration="12947000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685177994721</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="注释修改">
+      <created>1685245904351</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685245904352</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
+    <MESSAGE value="注释修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="注释修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
