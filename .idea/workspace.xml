@@ -35,13 +35,14 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.minis.test" />
@@ -89,8 +90,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Test1" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="应用程序级" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -138,7 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685265733124</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="注释修改">
+      <created>1685350554124</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685350554124</updated>
+    </task>
+    <task id="LOCAL-00005" summary="注释修改">
+      <created>1685350634778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685350634778</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,38 +174,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
     <MESSAGE value="注释修改" />
     <option name="LAST_COMMIT_MESSAGE" value="注释修改" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="842" y="381" key="#Notifications" timestamp="1685319347073">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="842" y="381" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1685319347073" />
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom" timestamp="1685319636312">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1685319636312" />
-    <state width="1876" height="233" key="GridCell.Tab.0.center" timestamp="1685319636311">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1685319636311" />
-    <state width="1876" height="233" key="GridCell.Tab.0.left" timestamp="1685319636311">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1685319636311" />
-    <state width="1876" height="233" key="GridCell.Tab.0.right" timestamp="1685319636311">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1685319636311" />
-    <state x="274" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1685319695339">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="274" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1685319695339" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

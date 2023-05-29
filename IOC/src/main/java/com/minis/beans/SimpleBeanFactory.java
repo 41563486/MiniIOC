@@ -17,7 +17,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     //用一个arraylist装bean的bean的别名
     private List<String> beanDefinitionNames = new ArrayList<>();
     //bean毛坯实例，为了解决循环依赖
-    private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
+    private final Map<String, Object> earlySingletonObjects = new HashMap<>(16);
 
     //无参构造方法
     public SimpleBeanFactory() {
@@ -49,7 +49,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                 singleton = createBean(bd);
                 this.registerBean(beanName, singleton);
 
-                //beanpostprocessor
+                //BeanPostProcessor
                 //step 1 : postProcessBeforeInitialization
                 //step 2 : afterPropertiesSet
                 //step 3 : init-method
@@ -74,7 +74,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     public void registerBean(String beanName, Object obj) {
         this.registerSingleton(beanName, obj);
 
-        //beanpostprocessor
+        //BeanPostProcessor
     }
 
     //注册bean该bean实例的定义，将别名与bean绑定
@@ -160,9 +160,9 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
 
     //创建bean实例
     private Object doCreateBean(BeanDefinition bd) {
-        Class<?> clz = null;
+        Class<?> clz ;
         Object obj = null;
-        Constructor<?> con = null;
+        Constructor<?> con ;
 
         try {
             //通过类名加载类
@@ -205,22 +205,25 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                     e.printStackTrace();
                 } catch (SecurityException e) {
                     e.printStackTrace();
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
+                }  catch (InvocationTargetException e) {
                     e.printStackTrace();
                 }
             } else {
                 //将对象实例化（无参构造方法）
-                obj = clz.newInstance();
+                obj = clz.getDeclaredConstructor().newInstance();
             }
 
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        }
+         catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         //打印bean的id和类名，和对象的String类型
