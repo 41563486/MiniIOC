@@ -169,13 +169,19 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
             clz = Class.forName(bd.getClassName());
 
             //handle constructor
-            //处理构造函数
+            //处理构造函数参数
             ArgumentValues argumentValues = bd.getConstructorArgumentValues();
+            //isEmpty返回值取反，判断是否为空
             if (!argumentValues.isEmpty()) {
+                //通过构造函数构建一个数组类，长度为构造参数的数量，这个数组可以为后面提供，构造参数类的类型
                 Class<?>[] paramTypes = new Class<?>[argumentValues.getArgumentCount()];
+                //创建一个对象数组用来装参数值对象，数组的长度为参数值的数量
                 Object[] paramValues = new Object[argumentValues.getArgumentCount()];
+                //循环遍历参数值的数量
                 for (int i = 0; i < argumentValues.getArgumentCount(); i++) {
+                    //通过获取索引号的方法给每个参数值赋值.
                     ArgumentValue argumentValue = argumentValues.getIndexedArgumentValue(i);
+                    //通过获取类型方法（类型为字符串类型），是否匹配来确定，类的数据类型。
                     if ("String".equals(argumentValue.getType()) || "java.lang.String".equals(argumentValue.getType())) {
                         paramTypes[i] = String.class;
                         paramValues[i] = argumentValue.getValue();
@@ -191,7 +197,9 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                     }
                 }
                 try {
+                    //构造函数的类的类型
                     con = clz.getConstructor(paramTypes);
+                    //参数值的数据类型
                     obj = con.newInstance(paramValues);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
@@ -203,6 +211,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                     e.printStackTrace();
                 }
             } else {
+                //将对象实例化（无参构造方法）
                 obj = clz.newInstance();
             }
 
@@ -214,25 +223,35 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
             e.printStackTrace();
         }
 
+        //打印bean的id和类名，和对象的String类型
         System.out.println(bd.getId() + " bean created. " + bd.getClassName() + " : " + obj.toString());
 
         return obj;
 
     }
-
+        //处理属性
     private void handleProperties(BeanDefinition bd, Class<?> clz, Object obj) {
         //handle properties
+        //打印bean的id
         System.out.println("handle properties for bean : " + bd.getId());
+        //获取属性的参数值
         PropertyValues propertyValues = bd.getPropertyValues();
+        //isEmpty取反，判空。
         if (!propertyValues.isEmpty()) {
+            //遍历属性值的值
             for (int i = 0; i < propertyValues.size(); i++) {
+                //通过获取该索引号，给当前的属性值赋值
                 PropertyValue propertyValue = propertyValues.getPropertyValueList().get(i);
+                //获取属性的，标签的参数值
                 String pName = propertyValue.getName();
                 String pType = propertyValue.getType();
                 Object pValue = propertyValue.getValue();
                 boolean isRef = propertyValue.getIsRef();
+                //类的类型数组
                 Class<?>[] paramTypes = new Class<?>[1];
+                //参数值的对象数组
                 Object[] paramValues = new Object[1];
+                //判断是否引用其他bean,并且判断该类的类型。
                 if (!isRef) {
                     if ("String".equals(pType) || "java.lang.String".equals(pType)) {
                         paramTypes[0] = String.class;
@@ -257,11 +276,13 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                         e.printStackTrace();
                     }
                 }
-
+                //创建bean依赖的setting方法，并且将首字母大写（驼峰命名）
                 String methodName = "set" + pName.substring(0, 1).toUpperCase() + pName.substring(1);
+
 
                 Method method = null;
                 try {
+                    //getMethod返回clz类的public方法
                     method = clz.getMethod(methodName, paramTypes);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
@@ -269,6 +290,7 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
                     e.printStackTrace();
                 }
                 try {
+                    //使用invoke调用方法参数。因为方法在运行前无法知道调用哪个对象
                     method.invoke(obj, paramValues);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
