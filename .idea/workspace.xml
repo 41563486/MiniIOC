@@ -24,7 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="注释修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +65,8 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.minis.test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
@@ -76,10 +75,12 @@
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\beans" />
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\test" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.minis.test" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.minis.test" />
     </key>
   </component>
@@ -143,7 +144,7 @@
       <workItem from="1685241029433" duration="14984000" />
       <workItem from="1685318994821" duration="6589000" />
       <workItem from="1685405171498" duration="4140000" />
-      <workItem from="1685434254255" duration="928000" />
+      <workItem from="1685434254255" duration="2971000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>
@@ -166,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685265733124</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="注释修改">
+      <created>1685437029578</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685437029578</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

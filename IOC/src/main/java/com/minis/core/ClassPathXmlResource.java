@@ -11,7 +11,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 
-
+//解析Resource资源包内的xml文件。遍历每一个元素节点.通过继承Iterator实现迭代器。
 public class ClassPathXmlResource implements Resource {
     Document document;
     Element rootElement;
