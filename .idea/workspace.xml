@@ -3,10 +3,28 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="注释修改">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +55,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "7245a636843f38ae56d5862d502a4303"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.minis.test" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
+      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
@@ -54,12 +76,10 @@
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\beans" />
       <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis\test" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC" />
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\java\com\minis" />
-      <recent name="E:\笔记\java\项目实战\手写minispring\代码\Mini IOC\IOC\src\main\resources" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.minis.test" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="com.minis.test" />
     </key>
   </component>
@@ -96,7 +116,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -122,6 +142,8 @@
       <workItem from="1685172678253" duration="1477000" />
       <workItem from="1685241029433" duration="14984000" />
       <workItem from="1685318994821" duration="6589000" />
+      <workItem from="1685405171498" duration="4140000" />
+      <workItem from="1685434254255" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>
@@ -144,25 +166,11 @@
       <option name="project" value="LOCAL" />
       <updated>1685265733124</updated>
     </task>
-    <task id="LOCAL-00004" summary="注释修改">
-      <created>1685350554124</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1685350554124</updated>
-    </task>
-    <task id="LOCAL-00005" summary="注释修改">
-      <created>1685350634778</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685350634778</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
