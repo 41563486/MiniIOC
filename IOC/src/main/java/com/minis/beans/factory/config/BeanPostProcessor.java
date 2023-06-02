@@ -1,8 +1,6 @@
 package com.minis.beans.factory.config;
 
-import com.minis.ClassPathXmlApplicationContext_fast123;
-import com.minis.beans.BeansException;
-import com.minis.beans.factory.BeanFactory;
+import com.minis.beans.factory.BeansException;
 
 public interface BeanPostProcessor {
     //初始化之前

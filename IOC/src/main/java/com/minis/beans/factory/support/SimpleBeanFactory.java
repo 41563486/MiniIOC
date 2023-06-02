@@ -3,6 +3,7 @@ package com.minis.beans.factory.support;
 
 import com.minis.beans.*;
 import com.minis.beans.factory.BeanFactory;
+import com.minis.beans.factory.BeansException;
 import com.minis.beans.factory.config.ConstructorArgumentValue;
 import com.minis.beans.factory.config.ConstructorArgumentValues;
 import com.minis.beans.factory.config.BeanDefinition;

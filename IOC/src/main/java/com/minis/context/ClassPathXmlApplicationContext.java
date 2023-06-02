@@ -1,26 +1,35 @@
 package com.minis.context;
 
-import com.minis.beans.*;
-
 import com.minis.beans.factory.BeanFactory;
+import com.minis.beans.factory.BeansException;
+import com.minis.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import com.minis.beans.factory.config.AutowireCapableBeanFactory;
-import com.minis.beans.factory.support.SimpleBeanFactory;
+import com.minis.beans.factory.config.BeanFactoryPostProcessor;
+
 import com.minis.beans.factory.xml.XmlBeanDefinitionReader;
 import com.minis.core.ClassPathXmlResource;
 import com.minis.core.Resource;
 
-public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEventPublisher{
+import java.util.ArrayList;
+import java.util.List;
 
-//    SimpleBeanFactory beanFactory;
+public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationEventPublisher {
+
+    //    SimpleBeanFactory beanFactory;
     AutowireCapableBeanFactory beanFactory;
 
+    private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors =
+            new ArrayList<BeanFactoryPostProcessor>();
+    private String beanName;
+    private Object obj;
+
     //构造方法
-    public ClassPathXmlApplicationContext(String fileName){
+    public ClassPathXmlApplicationContext(String fileName) {
         this(fileName, true);
     }
 
     //加载xml，是否需要在加载xml时一起加载bean实例
-    public ClassPathXmlApplicationContext(String fileName, boolean isRefresh){
+    public ClassPathXmlApplicationContext(String fileName, boolean isRefresh) {
         Resource res = new ClassPathXmlResource(fileName);
         AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
@@ -28,8 +37,25 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
         this.beanFactory = beanFactory;
 
         if (isRefresh) {
-            this.beanFactory.refresh();
+            try {
+                refresh();
+            } catch (BeansException e) {
+                throw new RuntimeException(e);
+            }
         }
+    }
+
+
+    public void refresh() throws BeansException, IllegalStateException {
+        // Register bean processors that intercept bean creation.
+        registerBeanPostProcessors(this.beanFactory);
+
+        // Initialize other special beans in specific context subclasses.
+        onRefresh();
+    }
+
+    private void onRefresh() {
+        this.beanFactory.refresh();
     }
 
     //通过bean别名获取bean实例
@@ -38,12 +64,22 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
         return this.beanFactory.getBean(beanName);
     }
 
+    private void registerBeanPostProcessors(AutowireCapableBeanFactory bf) {
+        //if (supportAutowire) {
+        bf.addBeanPostProcessor(new AutowiredAnnotationBeanPostProcessor());
+        //}
+    }
+
+
     //是否包含此bean
     @Override
     public boolean ContainsBean(String name) {
         return this.beanFactory.ContainsBean(name);
     }
 
+    public void addBeanFactoryPostProcessor(BeanFactoryPostProcessor postProcessor) {
+        this.beanFactoryPostProcessors.add(postProcessor);
+    }
 
 
     //注册bean
@@ -73,6 +109,9 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
         return false;
     }
 
+    public List<BeanFactoryPostProcessor> getBeanFactoryPostProcessors() {
+        return beanFactoryPostProcessors;
+    }
 
     //获取类的类型
     @Override
