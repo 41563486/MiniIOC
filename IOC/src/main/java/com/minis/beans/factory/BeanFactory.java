@@ -1,5 +1,7 @@
 package com.minis.beans.factory;
 
+import com.minis.beans.BeansException;
+
 public interface BeanFactory {
 
 

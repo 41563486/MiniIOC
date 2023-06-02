@@ -1,7 +1,7 @@
 package com.minis.test;
 
 
-import com.minis.beans.factory.BeansException;
+import com.minis.beans.BeansException;
 import com.minis.context.ClassPathXmlApplicationContext;
 
 public class Test1 {

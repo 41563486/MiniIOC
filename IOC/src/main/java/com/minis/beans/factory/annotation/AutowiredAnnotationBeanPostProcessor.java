@@ -1,6 +1,6 @@
 package com.minis.beans.factory.annotation;
 
-import com.minis.beans.factory.BeansException;
+import com.minis.beans.BeansException;
 import com.minis.beans.factory.config.AutowireCapableBeanFactory;
 import com.minis.beans.factory.config.BeanPostProcessor;
 
