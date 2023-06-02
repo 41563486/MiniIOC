@@ -1,6 +1,6 @@
 package com.minis;
 
-import com.minis.beans.BeanDefinition;
+import com.minis.beans.factory.config.BeanDefinition;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;

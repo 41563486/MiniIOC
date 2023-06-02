@@ -1,8 +1,10 @@
-package com.minis.beans;
+package com.minis.beans.factory.support;
+
+import com.minis.beans.factory.config.BeanDefinition;
 
 public interface BeanDefinitionRegistry {
     //1、注册bean定义
-    void registerBeanDefinition(String name,BeanDefinition bd);
+    void registerBeanDefinition(String name, BeanDefinition bd);
     //2、移除bean定义
     void  removeBeanDefinition(String name);
     //3、获取bean定义

@@ -2,12 +2,17 @@ package com.minis.context;
 
 import com.minis.beans.*;
 
+import com.minis.beans.factory.BeanFactory;
+import com.minis.beans.factory.config.AutowireCapableBeanFactory;
+import com.minis.beans.factory.support.SimpleBeanFactory;
+import com.minis.beans.factory.xml.XmlBeanDefinitionReader;
 import com.minis.core.ClassPathXmlResource;
 import com.minis.core.Resource;
 
 public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEventPublisher{
 
-    SimpleBeanFactory beanFactory;
+//    SimpleBeanFactory beanFactory;
+    AutowireCapableBeanFactory beanFactory;
 
     //构造方法
     public ClassPathXmlApplicationContext(String fileName){
@@ -17,10 +22,10 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
     //加载xml，是否需要在加载xml时一起加载bean实例
     public ClassPathXmlApplicationContext(String fileName, boolean isRefresh){
         Resource res = new ClassPathXmlResource(fileName);
-        SimpleBeanFactory bf = new SimpleBeanFactory();
-        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bf);
+        AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         reader.loadBeanDefinitions(res);
-        this.beanFactory = bf;
+        this.beanFactory = beanFactory;
 
         if (isRefresh) {
             this.beanFactory.refresh();
@@ -60,7 +65,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory,ApplicationEv
     }
 
 
-    //判断当前对象是另一个对象的原型
+    //判断是否是原型对象
     @Override
     public boolean isPrototype(String name) {
         //生成方法的存根

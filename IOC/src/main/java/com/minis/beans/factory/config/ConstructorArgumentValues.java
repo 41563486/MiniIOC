@@ -1,21 +1,21 @@
-package com.minis.beans;
+package com.minis.beans.factory.config;
 
 import java.util.*;
 
-public class ArgumentValues {
+public class ConstructorArgumentValues {
     //    private  final Map<Integer,ArgumentValue> indexedArgumentValues=new HashMap<>(0);
 //    private  final List<ArgumentValue> genericArgumentValues=new LinkedList<>();
 
     //该类不会被继承，且这个数组必须初始化
-    private final List<ArgumentValue> argumentValueList = new ArrayList<>();
+    private final List<ConstructorArgumentValue> constructorArgumentValueList = new ArrayList<>();
 
     //构造函数
-    public ArgumentValues() {
+    public ConstructorArgumentValues() {
     }
 
     //添加新的参数值，用arraylist内置api
-    public void addArgumentValue(ArgumentValue newValue) {
-        this.argumentValueList.add(newValue);
+    public void addArgumentValue(ConstructorArgumentValue newValue) {
+        this.constructorArgumentValueList.add(newValue);
 
     }
 
@@ -26,9 +26,9 @@ public class ArgumentValues {
 
 
     //通过索引值获取参数值
-    public ArgumentValue getIndexedArgumentValue(int index) {
-        ArgumentValue argumentValue = this.argumentValueList.get(index);
-        return argumentValue;
+    public ConstructorArgumentValue getIndexedArgumentValue(int index) {
+        ConstructorArgumentValue constructorArgumentValue = this.constructorArgumentValueList.get(index);
+        return constructorArgumentValue;
     }
 
 //    public void addGenericArgumentValue(Object value, String type) {
@@ -62,12 +62,12 @@ public class ArgumentValues {
 
     //获取参数值数组的大小
     public int getArgumentCount() {
-        return this.argumentValueList.size();
+        return this.constructorArgumentValueList.size();
     }
 
     //判断参数值数组是否为空
     public boolean isEmpty() {
-        return this.argumentValueList.isEmpty();
+        return this.constructorArgumentValueList.isEmpty();
 
     }
 

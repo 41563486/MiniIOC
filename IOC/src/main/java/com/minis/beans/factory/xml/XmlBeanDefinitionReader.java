@@ -1,6 +1,12 @@
-package com.minis.beans;
+package com.minis.beans.factory.xml;
 
 
+import com.minis.beans.*;
+import com.minis.beans.factory.config.AutowireCapableBeanFactory;
+import com.minis.beans.factory.config.ConstructorArgumentValue;
+import com.minis.beans.factory.config.ConstructorArgumentValues;
+import com.minis.beans.factory.config.BeanDefinition;
+import com.minis.beans.factory.support.SimpleBeanFactory;
 import com.minis.core.Resource;
 import org.dom4j.Element;
 
@@ -9,9 +15,13 @@ import java.util.List;
 
 
 public class XmlBeanDefinitionReader {
-    SimpleBeanFactory bf;
-    public XmlBeanDefinitionReader(SimpleBeanFactory bf) {
-        this.bf = bf;
+//    SimpleBeanFactory bf;
+    AutowireCapableBeanFactory bf;
+//    public XmlBeanDefinitionReader(SimpleBeanFactory bf) {
+//        this.bf = bf;
+//    }
+
+    public XmlBeanDefinitionReader(AutowireCapableBeanFactory beanFactory) {
     }
 
     //加载bean定义
@@ -29,13 +39,13 @@ public class XmlBeanDefinitionReader {
             //处理构造器参数
             //使用dom4j内置api获取元素节点
             List<Element> constructorElements = element.elements("constructor-arg");
-            ArgumentValues AVS = new ArgumentValues();
+            ConstructorArgumentValues AVS = new ConstructorArgumentValues();
             //通过增强for循环遍历需要的属性值
             for (Element e : constructorElements) {
                 String pType = e.attributeValue("type");
                 String pName = e.attributeValue("name");
                 String pValue = e.attributeValue("value");
-                AVS.addArgumentValue(new ArgumentValue(pType,pName,pValue));
+                AVS.addArgumentValue(new ConstructorArgumentValue(pType,pName,pValue));
             }
             //setter方法
             beanDefinition.setConstructorArgumentValues(AVS);

@@ -1,10 +1,12 @@
-package com.minis.beans;
+package com.minis.beans.factory.config;
 
 //scope属性是判断该bean是什么模式（单例或者原型模式）
 // lazyInit表示加载时是否需要初始化,initMethodName为初始化话方法的名称
 //constructorArgumentValues构造器参数
 //dependsOn表示bean与bean间的依赖关系
 //beanClass  bean对应的映射类
+
+import com.minis.beans.PropertyValues;
 
 public class BeanDefinition {
     private String id;
@@ -15,7 +17,7 @@ public class BeanDefinition {
 
     private boolean lazyInit = true;
     private String[] dependsOn;
-    private ArgumentValues constructorArgumentValues;
+    private ConstructorArgumentValues constructorArgumentValues;
 
     private PropertyValues propertyValues;
     private String initMethodName;
@@ -37,11 +39,11 @@ public class BeanDefinition {
         this.className = className;
     }
 
-    public ArgumentValues getConstructorArgumentValues() {
+    public ConstructorArgumentValues getConstructorArgumentValues() {
         return constructorArgumentValues;
     }
 
-    public void setConstructorArgumentValues(ArgumentValues constructorArgumentValues) {
+    public void setConstructorArgumentValues(ConstructorArgumentValues constructorArgumentValues) {
         this.constructorArgumentValues = constructorArgumentValues;
     }
 
