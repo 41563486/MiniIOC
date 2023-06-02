@@ -6,6 +6,7 @@ import com.minis.beans.factory.config.AutowireCapableBeanFactory;
 import com.minis.beans.factory.config.ConstructorArgumentValue;
 import com.minis.beans.factory.config.ConstructorArgumentValues;
 import com.minis.beans.factory.config.BeanDefinition;
+import com.minis.beans.factory.support.AbstractBeanFactory;
 import com.minis.beans.factory.support.SimpleBeanFactory;
 import com.minis.core.Resource;
 import org.dom4j.Element;
@@ -15,13 +16,9 @@ import java.util.List;
 
 
 public class XmlBeanDefinitionReader {
-//    SimpleBeanFactory bf;
-    AutowireCapableBeanFactory bf;
-//    public XmlBeanDefinitionReader(SimpleBeanFactory bf) {
-//        this.bf = bf;
-//    }
-
-    public XmlBeanDefinitionReader(AutowireCapableBeanFactory beanFactory) {
+    AbstractBeanFactory bf;
+    public XmlBeanDefinitionReader(AbstractBeanFactory bf) {
+        this.bf = bf;
     }
 
     //加载bean定义

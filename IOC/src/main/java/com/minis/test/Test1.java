@@ -1,24 +1,23 @@
 package com.minis.test;
 
-
-import com.minis.beans.factory.BeansException;
+import com.minis.beans.BeansException;
 import com.minis.context.ClassPathXmlApplicationContext;
 
 public class Test1 {
 
-    public static void main(String[] args) {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
-        AService aService;
-        BaseService bService;
-        try {
-            //aService = (AService)ctx.getBean("aservice");
-            //aService.sayHello();
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+		AService aService;
+		BaseService bService;
+		//aService = (AService)ctx.getBean("aservice");
+		//aService.sayHello();
 
-            bService = (BaseService)ctx.getBean("baseservice");
-            bService.sayHello();
-        } catch (BeansException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			bService = (BaseService)ctx.getBean("baseservice");
+		} catch (BeansException e) {
+			throw new RuntimeException(e);
+		}
+		bService.sayHello();
+	}
 
 }

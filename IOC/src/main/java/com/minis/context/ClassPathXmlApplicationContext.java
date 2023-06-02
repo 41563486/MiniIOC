@@ -1,7 +1,7 @@
 package com.minis.context;
 
+import com.minis.beans.BeansException;
 import com.minis.beans.factory.BeanFactory;
-import com.minis.beans.factory.BeansException;
 import com.minis.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import com.minis.beans.factory.config.AutowireCapableBeanFactory;
 import com.minis.beans.factory.config.BeanFactoryPostProcessor;
@@ -61,9 +61,23 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     //通过bean别名获取bean实例
     @Override
     public Object getBean(String beanName) throws BeansException {
-        return this.beanFactory.getBean(beanName);
+        try {
+            return this.beanFactory.getBean(beanName);
+        } catch (com.minis.beans.BeansException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    @Override
+    public boolean ContainsBean(String name) {
+        return this.beanFactory.ContainsBean(name);
+    }
+
+ /*   @Override
+    public boolean containsBean(String name) {
+        return this.beanFactory.containsBean(name);
+    }
+*/
     private void registerBeanPostProcessors(AutowireCapableBeanFactory bf) {
         //if (supportAutowire) {
         bf.addBeanPostProcessor(new AutowiredAnnotationBeanPostProcessor());
@@ -72,10 +86,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
 
 
     //是否包含此bean
-    @Override
-    public boolean ContainsBean(String name) {
-        return this.beanFactory.ContainsBean(name);
-    }
+
 
     public void addBeanFactoryPostProcessor(BeanFactoryPostProcessor postProcessor) {
         this.beanFactoryPostProcessors.add(postProcessor);

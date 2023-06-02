@@ -1,6 +1,7 @@
 package com.minis.beans.factory.config;
 
-import com.minis.beans.factory.BeansException;
+
+import com.minis.beans.BeansException;
 import com.minis.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import com.minis.beans.factory.support.AbstractBeanFactory;
 
@@ -25,7 +26,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
 
 
     @Override
-    public Object applyBeanPostProcessorBeforeInitialization(Object existingBean, String beanName) throws BeansException {
+    public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName) throws BeansException {
         Object result = existingBean;
         for (AutowiredAnnotationBeanPostProcessor beanPostProcessor : getBeanPostProcessors()) {
             beanPostProcessor.setBeanFactory(this);
@@ -40,7 +41,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
     }
 
     @Override
-    public Object applyBeanPostProcessorAfterInitialization(Object existingBean, String beanName) throws BeansException {
+    public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName) throws BeansException {
         Object result = existingBean;
         for (BeanPostProcessor beanPostProcessor : getBeanPostProcessors()) {
             result = beanPostProcessor.postProcessAfterInitialization(result, beanName);
@@ -50,4 +51,12 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
         }
         return result;
     }
+
+	@Override
+	public boolean ContainsBean(String name) {
+		return false;
+	}
+
+
+
 }

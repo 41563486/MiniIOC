@@ -1,12 +1,4 @@
-package com.minis.beans.factory.support;
-
-import com.minis.beans.BeansException;
-import com.minis.beans.PropertyValue;
-import com.minis.beans.PropertyValues;
-import com.minis.beans.factory.BeanFactory;
-import com.minis.beans.factory.config.BeanDefinition;
-import com.minis.beans.factory.config.ConstructorArgumentValue;
-import com.minis.beans.factory.config.ConstructorArgumentValues;
+package com.minis.beans;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -17,12 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory,BeanDefinitionRegistry{
+public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory,BeanDefinitionRegistry{
     private Map<String,BeanDefinition> beanDefinitionMap=new ConcurrentHashMap<>(256);
     private List<String> beanDefinitionNames=new ArrayList<>();
 	private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
 
-    public AbstractBeanFactory() {
+    public SimpleBeanFactory() {
     }
     
     public void refresh() {
@@ -48,15 +40,9 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 				
 				//beanpostprocessor
 				//step 1 : postProcessBeforeInitialization
-				applyBeanPostProcessorsBeforeInitialization(singleton, beanName);				
-
-				//step 2 : init-method
-				if (bd.getInitMethodName() != null && !bd.getInitMethodName().equals("")) {
-					invokeInitMethod(bd, singleton);
-				}
-
-				//step 3 : postProcessAfterInitialization
-				applyBeanPostProcessorsAfterInitialization(singleton, beanName);
+				//step 2 : afterPropertiesSet
+				//step 3 : init-method
+				//step 4 : postProcessAfterInitialization。
         	}
 				
         }
@@ -65,38 +51,15 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         }
         return singleton;
     }
-    
-    private void invokeInitMethod(BeanDefinition bd, Object obj) {
-    	Class<?> clz = obj.getClass();
-		Method method = null;
-		try {
-			method = clz.getMethod(bd.getInitMethodName());
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		}
-		try {
-			method.invoke(obj);
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		}    	
-    }
-    
-/*
 	@Override
 	public boolean containsBean(String name) {
 		return containsSingleton(name);
 	}
-*/
 
 	public void registerBean(String beanName, Object obj) {
 		this.registerSingleton(beanName, obj);
 		
+		//beanpostprocessor
 	}
 
 	@Override
@@ -158,11 +121,13 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 			e.printStackTrace();
 		}
 		
-		populateBean(bd, clz, obj);
+		handleProperties(bd, clz, obj);
 		
 		return obj;
+		
+		
 	}
-
+	
 	private Object doCreateBean(BeanDefinition bd) {
 		Class<?> clz = null;
 		Object obj = null;
@@ -172,12 +137,12 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
     		clz = Class.forName(bd.getClassName());
     		
     		//handle constructor
-    		ConstructorArgumentValues argumentValues = bd.getConstructorArgumentValues();
+    		ArgumentValues argumentValues = bd.getConstructorArgumentValues();
     		if (!argumentValues.isEmpty()) {
         		Class<?>[] paramTypes = new Class<?>[argumentValues.getArgumentCount()];
         		Object[] paramValues =   new Object[argumentValues.getArgumentCount()];  
     			for (int i=0; i<argumentValues.getArgumentCount(); i++) {
-    				ConstructorArgumentValue argumentValue = argumentValues.getIndexedArgumentValue(i);
+    				ArgumentValue argumentValue = argumentValues.getIndexedArgumentValue(i);
     				if ("String".equals(argumentValue.getType()) || "java.lang.String".equals(argumentValue.getType())) {
     					paramTypes[i] = String.class;
         				paramValues[i] = argumentValue.getValue();
@@ -226,10 +191,6 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
 	}
     
-	private void populateBean(BeanDefinition bd, Class<?> clz, Object obj) {
-		handleProperties(bd, clz, obj);
-	}
-	
 	private void handleProperties(BeanDefinition bd, Class<?> clz, Object obj) {
 		//handle properties
 		System.out.println("handle properties for bean : " + bd.getId());
@@ -297,11 +258,4 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 		}
 		
 	}
-
-	abstract public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName)
-			throws BeansException;
-
-	abstract public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName)
-			throws BeansException;
-
 }

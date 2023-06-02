@@ -1,6 +1,4 @@
-package com.minis.beans.factory.support;
-
-import com.minis.beans.factory.config.SingletonBeanRegistry;
+package com.minis.beans;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

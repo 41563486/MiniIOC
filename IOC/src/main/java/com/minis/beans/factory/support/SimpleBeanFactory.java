@@ -1,12 +1,13 @@
 package com.minis.beans.factory.support;
 
 
-import com.minis.beans.*;
+import com.minis.beans.BeansException;
+import com.minis.beans.PropertyValue;
+import com.minis.beans.PropertyValues;
 import com.minis.beans.factory.BeanFactory;
-import com.minis.beans.factory.BeansException;
+import com.minis.beans.factory.config.BeanDefinition;
 import com.minis.beans.factory.config.ConstructorArgumentValue;
 import com.minis.beans.factory.config.ConstructorArgumentValues;
-import com.minis.beans.factory.config.BeanDefinition;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -70,11 +71,20 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
         return singleton;
     }
 
-    //判断是否包含此名称的bean实例
     @Override
     public boolean ContainsBean(String name) {
+        return  this.ContainsBean(name);
+    }
+
+/*
+    @Override
+    public boolean containsBean(String name) {
         return containsSingleton(name);
     }
+*/
+
+    //判断是否包含此名称的bean实例
+
 
 
     //注册该bean实例
