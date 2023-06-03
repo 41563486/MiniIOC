@@ -41,7 +41,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
             //将最终bean对象，和bean别名传入注解处理类，处理@Autowired注解
             result = beanProcessor.postProcessBeforeInitialization(result, beanName);
             if (result == null) {
-                return result;
+                return null;
             }
         }
         //返回结果
@@ -58,7 +58,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
             //传入bean和bean别名给初始化后方法，处理@Autowired注解
             result = beanProcessor.postProcessAfterInitialization(result, beanName);
             if (result == null) {
-                return result;
+                return null;
             }
         }
         return result;

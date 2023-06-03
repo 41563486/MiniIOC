@@ -22,18 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="IOC4版 test finally">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/bean.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/BeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/Autowired.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/Autowired.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java" afterDir="false" />
+    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="IOC4版 注释完善">
       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/SimpleBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/SimpleBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/resources/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/resources/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +150,7 @@
       <workItem from="1685608232963" duration="5757000" />
       <workItem from="1685668989005" duration="2070000" />
       <workItem from="1685697247597" duration="134000" />
-      <workItem from="1685754430629" duration="17217000" />
+      <workItem from="1685754430629" duration="17742000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>
@@ -210,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685697366650</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="IOC4版 注释完善">
+      <created>1685784574323</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685784574323</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +229,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
     <MESSAGE value="注释修改" />
     <MESSAGE value="IOC4版 test finally" />
-    <option name="LAST_COMMIT_MESSAGE" value="IOC4版 test finally" />
+    <MESSAGE value="IOC4版 注释完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="IOC4版 注释完善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

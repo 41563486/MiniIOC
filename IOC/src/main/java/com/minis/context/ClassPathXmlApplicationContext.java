@@ -81,11 +81,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         return this.beanFactory.containsBean(name);
     }
 
- /*   @Override
-    public boolean containsBean(String name) {
-        return this.beanFactory.containsBean(name);
-    }
-*/
+
     private void registerBeanPostProcessors(AutowireCapableBeanFactory bf) {
         //if (supportAutowire) {
         bf.addBeanPostProcessor(new AutowiredAnnotationBeanPostProcessor());
