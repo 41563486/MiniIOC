@@ -31,11 +31,14 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     //加载xml，是否需要在加载xml时一起加载bean实例
     public ClassPathXmlApplicationContext(String fileName, boolean isRefresh) {
         Resource res = new ClassPathXmlResource(fileName);
+        //调用能解释注解的工厂对象
         AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        //加载定义
         reader.loadBeanDefinitions(res);
         this.beanFactory = beanFactory;
 
+        //判断是否是需要刷新实例
         if (isRefresh) {
             try {
                 refresh();
@@ -46,14 +49,18 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     }
 
 
+    //
     public void refresh() throws BeansException, IllegalStateException {
         // Register bean processors that intercept bean creation.
+        //注册拦截bean的bean处理器
         registerBeanPostProcessors(this.beanFactory);
 
+        //初始化特定上下文子类的其他特殊bean
         // Initialize other special beans in specific context subclasses.
         onRefresh();
     }
 
+    //防止循环依赖,先创建的毛胚bean实例
     private void onRefresh() {
         this.beanFactory.refresh();
     }
@@ -68,9 +75,10 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         }
     }
 
+    //判断是否包含此名字的bean
     @Override
-    public boolean ContainsBean(String name) {
-        return this.beanFactory.ContainsBean(name);
+    public boolean containsBean(String name) {
+        return this.beanFactory.containsBean(name);
     }
 
  /*   @Override
@@ -85,7 +93,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     }
 
 
-    //是否包含此bean
+
 
 
     public void addBeanFactoryPostProcessor(BeanFactoryPostProcessor postProcessor) {

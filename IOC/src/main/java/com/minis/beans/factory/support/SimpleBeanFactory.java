@@ -72,8 +72,8 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     }
 
     @Override
-    public boolean ContainsBean(String name) {
-        return  this.ContainsBean(name);
+    public boolean containsBean(String name) {
+        return  this.containsBean(name);
     }
 
 /*
