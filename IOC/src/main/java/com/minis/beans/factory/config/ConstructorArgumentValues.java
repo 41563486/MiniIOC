@@ -3,6 +3,7 @@ package com.minis.beans.factory.config;
 import java.util.ArrayList;
 import java.util.List;
 
+//构造器参数集合
 public class ConstructorArgumentValues {
 		private final List<ConstructorArgumentValue> argumentValueList = new ArrayList<ConstructorArgumentValue>();
 

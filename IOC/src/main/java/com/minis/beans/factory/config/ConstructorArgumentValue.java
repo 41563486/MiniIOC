@@ -1,6 +1,7 @@
 package com.minis.beans.factory.config;
 
 
+//构造器参数
 public class ConstructorArgumentValue {
     private Object value;
     private String type;

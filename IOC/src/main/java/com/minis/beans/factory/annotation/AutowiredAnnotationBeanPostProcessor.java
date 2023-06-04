@@ -7,6 +7,7 @@ import com.minis.beans.factory.config.BeanPostProcessor;
 import java.lang.reflect.Field;
 //实现初始化接口
 public class AutowiredAnnotationBeanPostProcessor implements BeanPostProcessor {
+	//存放AutowireCapableBeanFactory的实例化对象
 	private AutowireCapableBeanFactory beanFactory;
 
 	//在初始化之前的方法

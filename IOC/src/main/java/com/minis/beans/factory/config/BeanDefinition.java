@@ -5,7 +5,7 @@ package com.minis.beans.factory.config;
 //constructorArgumentValues构造器参数
 //dependsOn表示bean与bean间的依赖关系
 //beanClass  bean对应的映射类
-
+//此类是xml的标签定义在内存上的映射,故为bean定义类
 import com.minis.beans.PropertyValues;
 
 public class BeanDefinition {

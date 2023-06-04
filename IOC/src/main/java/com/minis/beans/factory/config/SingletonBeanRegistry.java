@@ -1,5 +1,6 @@
 package com.minis.beans.factory.config;
 
+//实例化bean注册接口
 public interface SingletonBeanRegistry {
     //1、注册单例bean
     void registerSingleton(String beanName,Object singletonObject);

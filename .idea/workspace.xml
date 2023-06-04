@@ -23,8 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="IOC4版 注释完善">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanFactoryPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanFactoryPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/BeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConstructorArgumentValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConstructorArgumentValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConstructorArgumentValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConstructorArgumentValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/SingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/BeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +162,7 @@
       <workItem from="1685668989005" duration="2070000" />
       <workItem from="1685697247597" duration="134000" />
       <workItem from="1685754430629" duration="17742000" />
+      <workItem from="1685860975351" duration="6768000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>

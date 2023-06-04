@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+//抽象bean工厂继承默认bean实例注册,实现bean工厂和bean定义的注册
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory, BeanDefinitionRegistry {
     //bean定义池
     private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>(256);
@@ -25,6 +26,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
     //早期毛胚实例池
     private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
 
+    //无参构造方法
     public AbstractBeanFactory() {
     }
 
