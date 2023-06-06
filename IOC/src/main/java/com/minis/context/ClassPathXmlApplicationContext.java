@@ -1,29 +1,35 @@
 package com.minis.context;
 
+import com.minis.beans.ApplicationEvent;
 import com.minis.beans.BeansException;
-import com.minis.beans.factory.BeanFactory;
 import com.minis.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import com.minis.beans.factory.config.AbstractAutowireCapableBeanFactory;
 import com.minis.beans.factory.config.BeanFactoryPostProcessor;
 
+import com.minis.beans.factory.config.BeanPostProcessor;
+import com.minis.beans.factory.config.ConfigurableListableBeanFactory;
 import com.minis.beans.factory.support.DefaultListableBeanFactory;
 
 import com.minis.beans.factory.xml.XmlBeanDefinitionReader;
 import com.minis.core.ClassPathXmlResource;
 import com.minis.core.Resource;
+import com.minis.core.env.Environment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationEventPublisher {
+public class ClassPathXmlApplicationContext extends AbstractApplicationContext {
+    DefaultListableBeanFactory beanFactory;
 
     //    SimpleBeanFactory beanFactory;
-    AbstractAutowireCapableBeanFactory beanFactory;
+//    AbstractAutowireCapableBeanFactory beanFactory;
+    private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors = new ArrayList<>();
 
-    private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors =
-            new ArrayList<BeanFactoryPostProcessor>();
-    private String beanName;
-    private Object obj;
+//    private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors =
+//            new ArrayList<BeanFactoryPostProcessor>();
+//    private String beanName;
+//    private Object obj;
 
     //构造方法
     public ClassPathXmlApplicationContext(String fileName) {
@@ -51,7 +57,13 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         }
     }
 
+    @Override
+    void registerListeners() {
+        ApplicationListener listener = new ApplicationListener();
+        this.getApplicationEventPublisher().addApplicationListener(listener);
+    }
 
+/*
     //
     public void refresh() throws BeansException, IllegalStateException {
         // Register bean processors that intercept bean creation.
@@ -62,10 +74,44 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         // Initialize other special beans in specific context subclasses.
         onRefresh();
     }
+*/
+
+    @Override
+    public ConfigurableListableBeanFactory getBeanFactory() throws IllegalStateException {
+        return this.beanFactory;
+    }
+
+    @Override
+    public void setEnvironment(Environment environment) {
+
+    }
+
+    @Override
+    public Environment getEnvironment() {
+        return null;
+    }
 
     //防止循环依赖,先创建的毛胚bean实例
-    private void onRefresh() {
+    public void onRefresh() {
         this.beanFactory.refresh();
+    }
+
+    @Override
+    protected void initApplicationEventPublisher() {
+        ApplicationEventPublisher aep = new SimpleApplicationEventPublisher();
+        this.setApplicationEventPublisher(aep);
+
+    }
+
+    @Override
+    protected void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+        this.beanFactory.addBeanPostProcessor(new AutowiredAnnotationBeanPostProcessor());
+
+    }
+
+    @Override
+    protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+
     }
 
     //通过bean别名获取bean实例
@@ -92,9 +138,6 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     }
 
 
-
-
-
     public void addBeanFactoryPostProcessor(BeanFactoryPostProcessor postProcessor) {
         this.beanFactoryPostProcessors.add(postProcessor);
     }
@@ -105,9 +148,15 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         this.beanFactory.registerBean(beanName, obj);
     }
 
+    @Override
+    public void addApplicationListener(ApplicationListener listener) {
+        this.getApplicationEventPublisher().addApplicationListener(listener);
+    }
+
     //发布事件
     @Override
     public void publishEvent(ApplicationEvent event) {
+        this.getApplicationEventPublisher().publishEvent(event);
     }
 
 
@@ -139,4 +188,56 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
         return null;
     }
 
+    @Override
+    protected void finishRefresh() {
+        publishEvent(new ContextRefreshEvent("Context Refreshed...."));
+
+    }
+
+
+    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
+
+    }
+
+    @Override
+    public int getBeanPostProcessorCount() {
+        return 0;
+    }
+
+    @Override
+    public void registerDependentBean(String beanName, String dependentBeanName) {
+
+    }
+
+    @Override
+    public String[] getDependentBeans(String beanName) {
+        return new String[0];
+    }
+
+    @Override
+    public String[] getDependenciesForBean(String beanName) {
+        return new String[0];
+    }
+
+
+    @Override
+    public int getBeanDefinitionCount() {
+        return 0;
+    }
+
+    @Override
+    public String[] getBeanDefinitionNames() {
+        return new String[0];
+    }
+
+    @Override
+    public String[] getBeanNamesForType(Class<?> type) {
+        return new String[0];
+    }
+
+    @Override
+    public <T> Map<String, T> getBeanOfType(Class<?> type) throws BeansException {
+        return null;
+    }
 }
