@@ -1,14 +1,14 @@
 package com.minis.beans.factory.annotation;
 
 import com.minis.beans.BeansException;
-import com.minis.beans.factory.config.AutowireCapableBeanFactory;
+import com.minis.beans.factory.config.AbstractAutowireCapableBeanFactory;
 import com.minis.beans.factory.config.BeanPostProcessor;
 
 import java.lang.reflect.Field;
 //实现初始化接口
 public class AutowiredAnnotationBeanPostProcessor implements BeanPostProcessor {
 	//存放AutowireCapableBeanFactory的实例化对象
-	private AutowireCapableBeanFactory beanFactory;
+	private AbstractAutowireCapableBeanFactory beanFactory;
 
 	//在初始化之前的方法
 	@Override
@@ -55,12 +55,12 @@ public class AutowiredAnnotationBeanPostProcessor implements BeanPostProcessor {
 	}
 
 	//bean工厂对象的getter,获取bean工厂对象
-	public AutowireCapableBeanFactory getBeanFactory() {
+	public AbstractAutowireCapableBeanFactory getBeanFactory() {
 		return beanFactory;
 	}
 
 	//bean工厂对象setter方法
-	public void setBeanFactory(AutowireCapableBeanFactory beanFactory) {
+	public void setBeanFactory(AbstractAutowireCapableBeanFactory beanFactory) {
 		this.beanFactory = beanFactory;
 	}
 

@@ -3,8 +3,10 @@ package com.minis.context;
 import com.minis.beans.BeansException;
 import com.minis.beans.factory.BeanFactory;
 import com.minis.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
-import com.minis.beans.factory.config.AutowireCapableBeanFactory;
+import com.minis.beans.factory.config.AbstractAutowireCapableBeanFactory;
 import com.minis.beans.factory.config.BeanFactoryPostProcessor;
+
+import com.minis.beans.factory.support.DefaultListableBeanFactory;
 
 import com.minis.beans.factory.xml.XmlBeanDefinitionReader;
 import com.minis.core.ClassPathXmlResource;
@@ -16,7 +18,7 @@ import java.util.List;
 public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationEventPublisher {
 
     //    SimpleBeanFactory beanFactory;
-    AutowireCapableBeanFactory beanFactory;
+    AbstractAutowireCapableBeanFactory beanFactory;
 
     private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors =
             new ArrayList<BeanFactoryPostProcessor>();
@@ -32,11 +34,12 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     public ClassPathXmlApplicationContext(String fileName, boolean isRefresh) {
         Resource res = new ClassPathXmlResource(fileName);
         //调用能解释注解的工厂对象
-        AutowireCapableBeanFactory beanFactory = new AutowireCapableBeanFactory();
+
+        DefaultListableBeanFactory bf = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
         //加载定义
         reader.loadBeanDefinitions(res);
-        this.beanFactory = beanFactory;
+        this.beanFactory = bf;
 
         //判断是否是需要刷新实例
         if (isRefresh) {
@@ -82,7 +85,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory, ApplicationE
     }
 
 
-    private void registerBeanPostProcessors(AutowireCapableBeanFactory bf) {
+    private void registerBeanPostProcessors(AbstractAutowireCapableBeanFactory bf) {
         //if (supportAutowire) {
         bf.addBeanPostProcessor(new AutowiredAnnotationBeanPostProcessor());
         //}
