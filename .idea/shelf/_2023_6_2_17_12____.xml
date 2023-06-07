@@ -1,0 +1,24 @@
+<changelist name="在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]" date="1685697125007" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/shelved.patch" />
+  <option name="DESCRIPTION" value="在进行更新之前于 2023/6/2 17:12 取消提交了更改 [更改]" />
+  <binary>
+    <option name="BEFORE_PATH" value="IOC/target/classes/com/minis/beans/BeanFactory.class" />
+    <option name="AFTER_PATH" value="IOC/target/classes/com/minis/beans/BeanFactory.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/BeanFactory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="IOC/target/classes/com/minis/test/Test1.class" />
+    <option name="AFTER_PATH" value="IOC/target/classes/com/minis/test/Test1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/Test1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" />
+    <option name="AFTER_PATH" value="IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/ClassPathXmlApplicationContext.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" />
+    <option name="AFTER_PATH" value="IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/XmlBeanDefinitionReader.class" />
+  </binary>
+</changelist>

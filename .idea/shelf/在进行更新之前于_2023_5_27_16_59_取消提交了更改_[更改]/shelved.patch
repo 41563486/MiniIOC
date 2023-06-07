@@ -1,0 +1,816 @@
+Index: IOC/src/main/resources/bean.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n\r\n<beans>\r\n    <bean id=\"basebaseservice\" class=\"com.minis.test.BaseBaseService\">\r\n        <property type=\"com.minis.test.AServiceImpl\" name=\"as\" ref=\"aservice\"/>\r\n    </bean>\r\n    <bean id=\"aservice\" class=\"com.minis.test.AServiceImpl\">\r\n        <constructor-arg type=\"String\" name=\"name\" value=\"abc\"/>\r\n        <constructor-arg type=\"int\" name=\"level\" value=\"3\"/>\r\n        <property type=\"String\" name=\"property1\" value=\"Someone says\"/>\r\n        <property type=\"String\" name=\"property2\" value=\"Hello World!\"/>\r\n        <property type=\"com.minis.test.BaseService\" name=\"ref1\" ref=\"baseservice\"/>\r\n    </bean>\r\n    <bean id=\"baseservice\" class=\"com.minis.test.BaseService\">\r\n        <property type=\"com.minis.test.BaseBaseService\" name=\"bbs\" ref=\"basebaseservice\"/>\r\n    </bean>\r\n\r\n\r\n</beans>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/resources/bean.xml b/IOC/src/main/resources/bean.xml
+--- a/IOC/src/main/resources/bean.xml	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/resources/bean.xml	(date 1685177806644)
+@@ -1,19 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8" ?>
+-
+ <beans>
+-    <bean id="basebaseservice" class="com.minis.test.BaseBaseService">
+-        <property type="com.minis.test.AServiceImpl" name="as" ref="aservice"/>
+-    </bean>
+-    <bean id="aservice" class="com.minis.test.AServiceImpl">
+-        <constructor-arg type="String" name="name" value="abc"/>
++    <bean id="aService" class="com.minis.test.AServiceImpl">
++        <property type="String" name="property1" value="Hello world" />
+         <constructor-arg type="int" name="level" value="3"/>
+-        <property type="String" name="property1" value="Someone says"/>
+-        <property type="String" name="property2" value="Hello World!"/>
+-        <property type="com.minis.test.BaseService" name="ref1" ref="baseservice"/>
+-    </bean>
+-    <bean id="baseservice" class="com.minis.test.BaseService">
+-        <property type="com.minis.test.BaseBaseService" name="bbs" ref="basebaseservice"/>
+     </bean>
+ 
+ 
+-</beans>
+\ No newline at end of file
++</beans>
+Index: IOC/src/main/java/com/minis/beans/PropertyValue.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.beans;\r\n\r\npublic class PropertyValue{\r\n    private final String type;\r\n    private final String name;\r\n    private final Object value;\r\n    private final boolean isRef;\r\n\r\n    public PropertyValue(String type, String name, Object value, boolean isRef) {\r\n        this.type = type;\r\n        this.name = name;\r\n        this.value = value;\r\n        this.isRef = isRef;\r\n    }\r\n\r\n    public String getType() {\r\n        return this.type;\r\n    }\r\n\r\n    public String getName() {\r\n        return this.name;\r\n    }\r\n\r\n    public Object getValue() {\r\n        return this.value;\r\n    }\r\n\r\n    public boolean getIsRef() {\r\n        return isRef;\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/beans/PropertyValue.java b/IOC/src/main/java/com/minis/beans/PropertyValue.java
+--- a/IOC/src/main/java/com/minis/beans/PropertyValue.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/beans/PropertyValue.java	(date 1685177807378)
+@@ -1,33 +1,21 @@
+ package com.minis.beans;
+ 
+-public class PropertyValue{
+-    private final String type;
++//xml属性标签的各个属性
++public class PropertyValue {
+     private final String name;
+     private final Object value;
+-    private final boolean isRef;
+ 
+-    public PropertyValue(String type, String name, Object value, boolean isRef) {
+-        this.type = type;
++
++    public PropertyValue(String name, Object value) {
+         this.name = name;
+         this.value = value;
+-        this.isRef = isRef;
+-    }
+-
+-    public String getType() {
+-        return this.type;
+     }
+ 
+     public String getName() {
+-        return this.name;
++        return name;
+     }
+ 
+     public Object getValue() {
+-        return this.value;
++        return value;
+     }
+-
+-    public boolean getIsRef() {
+-        return isRef;
+-    }
+-
+ }
+-
+Index: IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.context;\r\n\r\npublic interface ApplicationEventPublisher {\r\n    //事件监听\r\n    void publishEvent(ApplicationEvent event);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java b/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java
+--- a/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java	(date 1685177652435)
+@@ -1,5 +1,6 @@
+ package com.minis.context;
+ 
++//事件发布类。如果需要发布事件需要实现这个类
+ public interface ApplicationEventPublisher {
+     //事件监听
+     void publishEvent(ApplicationEvent event);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"164c1d98-3da7-498d-8928-84315ac6d1f7\" name=\"更改\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContextx.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseBaseService.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseService.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BeanException.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/jarRepositories.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/jarRepositories.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/.idea/compiler.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/.idea/compiler.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/ClassPathXmlApplicationContext_fast.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanDefinition.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanException.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanFactory.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/SimpleBeanFactory.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/XmlBeanDefinitionReader.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/context/ClassPathXmlApplicationContext.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/ClassPathXmlResource.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/Resource.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AService.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AServiceImpl.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/Test1.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/resources/main/bean.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/build/tmp/compileJava/previous-compilation-data.bin\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast123.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEvent.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEventPublisher.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeansException.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/src/main/resources/bean.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/src/main/resources/bean.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/bean.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/bean.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext_fast.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanException.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Mini IOC.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Mini IOC.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/bean.xml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2PoxMtefoeZECdVUNaTxv5tcY4u\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"E:/笔记/java/项目实战/手写minispring/代码/Mini IOC/IOC\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"模块\",\r\n    \"project.structure.proportion\": \"0.15722656\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"spring.configuration.checksum\": \"7245a636843f38ae56d5862d502a4303\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"com.minis.test\" />\r\n    </key>\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\\src\\main\\resources\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\\src\\main\\java\\com\\minis\\beans\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\\src\\main\\java\\com\\minis\\test\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\\src\\main\\java\\com\\minis\" />\r\n      <recent name=\"E:\\笔记\\java\\项目实战\\手写minispring\\代码\\Mini IOC\\IOC\\src\\main\\resources\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.minis.test\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"应用程序.Test1\">\r\n    <configuration name=\"Test1\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.minis.test.Test1\" />\r\n      <module name=\"IOC\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.minis.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"test_path\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.minis.test.test_path\" />\r\n      <module name=\"IOC\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.minis.test.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"应用程序.Test1\" />\r\n        <item itemvalue=\"应用程序.test_path\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"应用程序级\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"默认任务\">\r\n      <changelist id=\"164c1d98-3da7-498d-8928-84315ac6d1f7\" name=\"更改\" comment=\"\" />\r\n      <created>1684137192295</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684137192295</updated>\r\n      <workItem from=\"1684137193660\" duration=\"6889000\" />\r\n      <workItem from=\"1684219492740\" duration=\"5789000\" />\r\n      <workItem from=\"1684306480382\" duration=\"10798000\" />\r\n      <workItem from=\"1684394604333\" duration=\"7669000\" />\r\n      <workItem from=\"1684456934771\" duration=\"1120000\" />\r\n      <workItem from=\"1684458784838\" duration=\"672000\" />\r\n      <workItem from=\"1684459471700\" duration=\"1403000\" />\r\n      <workItem from=\"1684713923049\" duration=\"5125000\" />\r\n      <workItem from=\"1684800350871\" duration=\"3270000\" />\r\n      <workItem from=\"1684886965173\" duration=\"8301000\" />\r\n      <workItem from=\"1685095242128\" duration=\"1362000\" />\r\n      <workItem from=\"1685154952738\" duration=\"8243000\" />\r\n      <workItem from=\"1685172678253\" duration=\"1477000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/.idea/workspace.xml	(date 1685177798851)
+@@ -4,67 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="">
+-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContextx.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseBaseService.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BaseService.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BeanException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/.idea/compiler.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/ClassPathXmlApplicationContext_fast.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanDefinition.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanException.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanFactory.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/SimpleBeanFactory.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/XmlBeanDefinitionReader.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/ClassPathXmlResource.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/Resource.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AService.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AServiceImpl.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/Test1.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/resources/main/bean.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast123.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValue.java" afterDir="false" />
++    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ArgumentValues.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinition.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanDefinitionRegistry.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeansException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanFactory.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/DefaultSingletonBeanRegistry.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValue.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/PropertyValues.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/SingletonBeanRegistry.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/XmlBeanDefinitionReader.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ClassPathXmlApplicationContext.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/ClassPathXmlResource.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/Resource.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/AServiceImpl.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/Test1.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/IOC/src/main/resources/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/resources/bean.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/bean.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext_fast.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanException.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanFactory.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/XmlBeanDefinitionReader.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ClassPathXmlApplicationContext.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/core/ClassPathXmlResource.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AService.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/AServiceImpl.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/Test1.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Mini IOC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mini IOC.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bean.xml" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -181,8 +129,16 @@
+       <workItem from="1684886965173" duration="8301000" />
+       <workItem from="1685095242128" duration="1362000" />
+       <workItem from="1685154952738" duration="8243000" />
+-      <workItem from="1685172678253" duration="1477000" />
++      <workItem from="1685172678253" duration="1884000" />
++    </task>
++    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
++      <created>1685177632862</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1685177632863</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -198,6 +154,10 @@
+         </entry>
+       </map>
+     </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
++    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: IOC/src/main/java/com/minis/context/ApplicationEvent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.context;\r\n\r\nimport java.util.EventObject;\r\n\r\npublic class ApplicationEvent extends EventObject {\r\n    private static final long serialVersionUID=1L;\r\n\r\n\r\n    public ApplicationEvent(Object arg0) {\r\n        super(arg0);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/context/ApplicationEvent.java b/IOC/src/main/java/com/minis/context/ApplicationEvent.java
+--- a/IOC/src/main/java/com/minis/context/ApplicationEvent.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/context/ApplicationEvent.java	(date 1685177652434)
+@@ -2,7 +2,9 @@
+ 
+ import java.util.EventObject;
+ 
++//提供观察者模式的入口，事件监听
+ public class ApplicationEvent extends EventObject {
++    //序列化标识符
+     private static final long serialVersionUID=1L;
+ 
+ 
+Index: IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.beans;\r\n\r\n\r\nimport java.lang.reflect.Constructor;\r\nimport java.lang.reflect.InvocationTargetException;\r\nimport java.lang.reflect.Method;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.concurrent.ConcurrentHashMap;\r\n\r\npublic class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory,BeanDefinitionRegistry{\r\n    private Map<String,BeanDefinition> beanDefinitionMap=new ConcurrentHashMap<>(256);\r\n    private List<String> beanDefinitionNames=new ArrayList<>();\r\n    private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);\r\n\r\n    public SimpleBeanFactory() {\r\n    }\r\n\r\n    public void refresh() {\r\n        for (String beanName : beanDefinitionNames) {\r\n            try {\r\n                getBean(beanName);\r\n            } catch (BeansException e) {\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    public Object getBean(String beanName) throws BeansException{\r\n        Object singleton = this.getSingleton(beanName);\r\n\r\n        if (singleton == null) {\r\n            singleton = this.earlySingletonObjects.get(beanName);\r\n            if (singleton == null) {\r\n                System.out.println(\"get bean null -------------- \" + beanName);\r\n                BeanDefinition bd = beanDefinitionMap.get(beanName);\r\n                singleton=createBean(bd);\r\n                this.registerBean(beanName, singleton);\r\n\r\n                //beanpostprocessor\r\n                //step 1 : postProcessBeforeInitialization\r\n                //step 2 : afterPropertiesSet\r\n                //step 3 : init-method\r\n                //step 4 : postProcessAfterInitialization。\r\n            }\r\n\r\n        }\r\n        if (singleton == null) {\r\n            throw new BeansException(\"bean is null.\");\r\n        }\r\n        return singleton;\r\n    }\r\n\r\n    @Override\r\n    public boolean ContainsBean(String name) {\r\n        return containsSingleton(name);\r\n    }\r\n\r\n\r\n    public void registerBean(String beanName, Object obj) {\r\n        this.registerSingleton(beanName, obj);\r\n\r\n        //beanpostprocessor\r\n    }\r\n\r\n    @Override\r\n    public void registerBeanDefinition(String name, BeanDefinition bd) {\r\n        this.beanDefinitionMap.put(name,bd);\r\n        this.beanDefinitionNames.add(name);\r\n        if (!bd.isLazyInit()) {\r\n            try {\r\n                getBean(name);\r\n            } catch (BeansException e) {\r\n                // TODO Auto-generated catch block\r\n                e.printStackTrace();\r\n            }\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void removeBeanDefinition(String name) {\r\n        this.beanDefinitionMap.remove(name);\r\n        this.beanDefinitionNames.remove(name);\r\n        this.removeSingleton(name);\r\n\r\n    }\r\n\r\n    @Override\r\n    public BeanDefinition getBeanDefinition(String name) {\r\n        return this.beanDefinitionMap.get(name);\r\n    }\r\n\r\n    @Override\r\n    public boolean containsBeanDefinition(String name) {\r\n        return this.beanDefinitionMap.containsKey(name);\r\n    }\r\n\r\n    @Override\r\n    public boolean isSingleton(String name) {\r\n        return this.beanDefinitionMap.get(name).isSingleton();\r\n    }\r\n\r\n    @Override\r\n    public boolean isPrototype(String name) {\r\n        return this.beanDefinitionMap.get(name).isPrototype();\r\n    }\r\n\r\n    @Override\r\n    public Class<?> getType(String name) {\r\n        return this.beanDefinitionMap.get(name).getClass();\r\n    }\r\n\r\n    private Object createBean(BeanDefinition bd) {\r\n        Class<?> clz = null;\r\n        Object obj = doCreateBean(bd);\r\n\r\n        this.earlySingletonObjects.put(bd.getId(), obj);\r\n\r\n        try {\r\n            clz = Class.forName(bd.getClassName());\r\n        } catch (ClassNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        handleProperties(bd, clz, obj);\r\n\r\n        return obj;\r\n\r\n\r\n    }\r\n\r\n    private Object doCreateBean(BeanDefinition bd) {\r\n        Class<?> clz = null;\r\n        Object obj = null;\r\n        Constructor<?> con = null;\r\n\r\n        try {\r\n            clz = Class.forName(bd.getClassName());\r\n\r\n            //handle constructor\r\n            ArgumentValues argumentValues = bd.getConstructorArgumentValues();\r\n            if (!argumentValues.isEmpty()) {\r\n                Class<?>[] paramTypes = new Class<?>[argumentValues.getArgumentCount()];\r\n                Object[] paramValues =   new Object[argumentValues.getArgumentCount()];\r\n                for (int i=0; i<argumentValues.getArgumentCount(); i++) {\r\n                    ArgumentValue argumentValue = argumentValues.getIndexedArgumentValue(i);\r\n                    if (\"String\".equals(argumentValue.getType()) || \"java.lang.String\".equals(argumentValue.getType())) {\r\n                        paramTypes[i] = String.class;\r\n                        paramValues[i] = argumentValue.getValue();\r\n                    }\r\n                    else if (\"Integer\".equals(argumentValue.getType()) || \"java.lang.Integer\".equals(argumentValue.getType())) {\r\n                        paramTypes[i] = Integer.class;\r\n                        paramValues[i] = Integer.valueOf((String) argumentValue.getValue());\r\n                    }\r\n                    else if (\"int\".equals(argumentValue.getType())) {\r\n                        paramTypes[i] = int.class;\r\n                        paramValues[i] = Integer.valueOf((String) argumentValue.getValue()).intValue();\r\n                    }\r\n                    else {\r\n                        paramTypes[i] = String.class;\r\n                        paramValues[i] = argumentValue.getValue();\r\n                    }\r\n                }\r\n                try {\r\n                    con = clz.getConstructor(paramTypes);\r\n                    obj = con.newInstance(paramValues);\r\n                } catch (NoSuchMethodException e) {\r\n                    e.printStackTrace();\r\n                } catch (SecurityException e) {\r\n                    e.printStackTrace();\r\n                } catch (IllegalArgumentException e) {\r\n                    e.printStackTrace();\r\n                } catch (InvocationTargetException e) {\r\n                    e.printStackTrace();\r\n                }\r\n            }\r\n            else {\r\n                obj = clz.newInstance();\r\n            }\r\n\r\n        } catch (InstantiationException e) {\r\n            e.printStackTrace();\r\n        } catch (IllegalAccessException e) {\r\n            e.printStackTrace();\r\n        } catch (ClassNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        System.out.println(bd.getId() + \" bean created. \" + bd.getClassName() + \" : \" + obj.toString());\r\n\r\n        return obj;\r\n\r\n    }\r\n\r\n    private void handleProperties(BeanDefinition bd, Class<?> clz, Object obj) {\r\n        //handle properties\r\n        System.out.println(\"handle properties for bean : \" + bd.getId());\r\n        PropertyValues propertyValues = bd.getPropertyValues();\r\n        if (!propertyValues.isEmpty()) {\r\n            for (int i=0; i<propertyValues.size(); i++) {\r\n                PropertyValue propertyValue = propertyValues.getPropertyValueList().get(i);\r\n                String pName = propertyValue.getName();\r\n                String pType = propertyValue.getType();\r\n                Object pValue = propertyValue.getValue();\r\n                boolean isRef = propertyValue.getIsRef();\r\n                Class<?>[] paramTypes = new Class<?>[1];\r\n                Object[] paramValues =   new Object[1];\r\n                if (!isRef) {\r\n                    if (\"String\".equals(pType) || \"java.lang.String\".equals(pType)) {\r\n                        paramTypes[0] = String.class;\r\n                    }\r\n                    else if (\"Integer\".equals(pType) || \"java.lang.Integer\".equals(pType)) {\r\n                        paramTypes[0] = Integer.class;\r\n                    }\r\n                    else if (\"int\".equals(pType)) {\r\n                        paramTypes[0] = int.class;\r\n                    }\r\n                    else {\r\n                        paramTypes[0] = String.class;\r\n                    }\r\n\r\n                    paramValues[0] = pValue;\r\n                }\r\n                else { //is ref, create the dependent beans\r\n                    try {\r\n                        paramTypes[0] = Class.forName(pType);\r\n                    } catch (ClassNotFoundException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n                    try {\r\n                        paramValues[0] = getBean((String)pValue);\r\n                    } catch (BeansException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n\r\n                String methodName = \"set\" + pName.substring(0,1).toUpperCase() + pName.substring(1);\r\n\r\n                Method method = null;\r\n                try {\r\n                    method = clz.getMethod(methodName, paramTypes);\r\n                } catch (NoSuchMethodException e) {\r\n                    e.printStackTrace();\r\n                } catch (SecurityException e) {\r\n                    e.printStackTrace();\r\n                }\r\n                try {\r\n                    method.invoke(obj, paramValues);\r\n                } catch (IllegalAccessException e) {\r\n                    e.printStackTrace();\r\n                } catch (IllegalArgumentException e) {\r\n                    e.printStackTrace();\r\n                } catch (InvocationTargetException e) {\r\n                    e.printStackTrace();\r\n                }\r\n\r\n\r\n            }\r\n        }\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java b/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java
+--- a/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java	(date 1685177807955)
+@@ -1,264 +1,113 @@
+ package com.minis.beans;
+ 
+-
+-import java.lang.reflect.Constructor;
+ import java.lang.reflect.InvocationTargetException;
+-import java.lang.reflect.Method;
+ import java.util.ArrayList;
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.concurrent.ConcurrentHashMap;
+ 
+-public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory,BeanDefinitionRegistry{
+-    private Map<String,BeanDefinition> beanDefinitionMap=new ConcurrentHashMap<>(256);
+-    private List<String> beanDefinitionNames=new ArrayList<>();
+-    private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
++public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
++
++    //实例中存放所有bean定义的实例的map
++    //ConcurrentHashMap允许多个线程同时读写，锁的粒度较小。不会锁住整个线程，使用了锁分段技术。内部的值是设定表的大小而不会动态调整
++    private Map<String, BeanDefinition> beanDefinitions = new ConcurrentHashMap<>(256);
++
++    //定义bean定义实例的集合
++    private List<String> beanDefinitionNames = new ArrayList<>();
+ 
++    //无参构造器
+     public SimpleBeanFactory() {
+     }
+ 
+-    public void refresh() {
+-        for (String beanName : beanDefinitionNames) {
++    //getBean,容器的核心方法，从单例bean集合内取出单例bean
++    public Object getBean(String beanName) throws BeanException {
++        //先尝试拿出bean实例
++        Object singleton = this.singletons.get(beanName);
++        //方法兼顾判空拿取和，创建实例
++        //如果还没有这个bean的实例，则获取它的定义来创建实例
++        if (singletons == null) {
++            //获取bean的定义
++            BeanDefinition beanDefinition = beanDefinitions.get(beanName);
++            if (beanDefinition == null) {
++                throw new BeanException("No Bean.");
++            }
+             try {
+-                getBean(beanName);
+-            } catch (BeansException e) {
+-                e.printStackTrace();
++                //获取bean的定义,通过java反射加载类，后面跟的方法是如果类没有构造方法，则创建一个构造方法
++                singleton = Class.forName(beanDefinition.getClassName()).getDeclaredConstructor().newInstance();
++            } catch (ClassNotFoundException e) {
++                throw new RuntimeException(e);
++            } catch (InstantiationException e) {
++                throw new RuntimeException(e);
++            } catch (IllegalAccessException e) {
++                throw new RuntimeException(e);
++            } catch (InvocationTargetException e) {
++                throw new RuntimeException(e);
++            } catch (NoSuchMethodException e) {
++                throw new RuntimeException(e);
+             }
+-        }
+-    }
+-
+-    public Object getBean(String beanName) throws BeansException{
+-        Object singleton = this.getSingleton(beanName);
+-
+-        if (singleton == null) {
+-            singleton = this.earlySingletonObjects.get(beanName);
+-            if (singleton == null) {
+-                System.out.println("get bean null -------------- " + beanName);
+-                BeanDefinition bd = beanDefinitionMap.get(beanName);
+-                singleton=createBean(bd);
+-                this.registerBean(beanName, singleton);
++            //新注册这个bean实例
++            this.registerSingleton(beanName, singleton);
+ 
+-                //beanpostprocessor
+-                //step 1 : postProcessBeforeInitialization
+-                //step 2 : afterPropertiesSet
+-                //step 3 : init-method
+-                //step 4 : postProcessAfterInitialization。
+-            }
+ 
+         }
+-        if (singleton == null) {
+-            throw new BeansException("bean is null.");
+-        }
++        //返回一个单例bean实例
+         return singleton;
+     }
+ 
+-    @Override
+-    public boolean ContainsBean(String name) {
+-        return containsSingleton(name);
+-    }
+-
+-
+-    public void registerBean(String beanName, Object obj) {
+-        this.registerSingleton(beanName, obj);
+-
+-        //beanpostprocessor
+-    }
+-
+-    @Override
+-    public void registerBeanDefinition(String name, BeanDefinition bd) {
+-        this.beanDefinitionMap.put(name,bd);
+-        this.beanDefinitionNames.add(name);
+-        if (!bd.isLazyInit()) {
+-            try {
+-                getBean(name);
+-            } catch (BeansException e) {
+-                // TODO Auto-generated catch block
+-                e.printStackTrace();
+-            }
+-        }
++    //注册bean定义
++    public void registerBeanDefinition(String name, BeanDefinition beanDefinition) {
++        this.beanDefinitions.put(beanDefinition.getId(), beanDefinition);
++//        this.beanDefinitionNames.add(name);
++//        if (!beanDefinition.isLazyInit()) {
++//            try {
++//                getBean(name);
++//            } catch (BeanException e) {
++//                throw new RuntimeException(e);
++//            }
++//        }
+     }
+ 
+-    @Override
++    //移除bean定义
+     public void removeBeanDefinition(String name) {
+-        this.beanDefinitionMap.remove(name);
++        this.beanDefinitions.remove(name);
+         this.beanDefinitionNames.remove(name);
+         this.removeSingleton(name);
++    }
++    //获取bean定义
++    public BeanDefinition getBeanDefinition(String name) {
++        return this.beanDefinitions.get(name);
++    }
+ 
+-    }
+ 
++    //重写判断是否有单例bean实例
+     @Override
+-    public BeanDefinition getBeanDefinition(String name) {
+-        return this.beanDefinitionMap.get(name);
++    public boolean ContainsBean(String name) {
++        return containsSingleton(name);
+     }
+ 
++    //重写注册单例bean实例
+     @Override
+-    public boolean containsBeanDefinition(String name) {
+-        return this.beanDefinitionMap.containsKey(name);
++    public void registerBean(String beanName, Object obj) {
++        this.registerSingleton(beanName, obj);
+     }
+ 
++    //重写判断是否有单例bean实例
+     @Override
+     public boolean isSingleton(String name) {
+-        return this.beanDefinitionMap.get(name).isSingleton();
++        return this.beanDefinitions.containsKey(name);
+     }
+-
++    //重写判断是否是设置的属性
+     @Override
+     public boolean isPrototype(String name) {
+-        return this.beanDefinitionMap.get(name).isPrototype();
++        return this.beanDefinitions.get(name).isPrototype();
+     }
+ 
++    //重写判断bean的类型
+     @Override
+     public Class<?> getType(String name) {
+-        return this.beanDefinitionMap.get(name).getClass();
++        return this.beanDefinitions.get(name).getClass();
+     }
+-
+-    private Object createBean(BeanDefinition bd) {
+-        Class<?> clz = null;
+-        Object obj = doCreateBean(bd);
+-
+-        this.earlySingletonObjects.put(bd.getId(), obj);
+-
+-        try {
+-            clz = Class.forName(bd.getClassName());
+-        } catch (ClassNotFoundException e) {
+-            e.printStackTrace();
+-        }
+-
+-        handleProperties(bd, clz, obj);
+-
+-        return obj;
+-
+-
+-    }
+-
+-    private Object doCreateBean(BeanDefinition bd) {
+-        Class<?> clz = null;
+-        Object obj = null;
+-        Constructor<?> con = null;
+-
+-        try {
+-            clz = Class.forName(bd.getClassName());
+-
+-            //handle constructor
+-            ArgumentValues argumentValues = bd.getConstructorArgumentValues();
+-            if (!argumentValues.isEmpty()) {
+-                Class<?>[] paramTypes = new Class<?>[argumentValues.getArgumentCount()];
+-                Object[] paramValues =   new Object[argumentValues.getArgumentCount()];
+-                for (int i=0; i<argumentValues.getArgumentCount(); i++) {
+-                    ArgumentValue argumentValue = argumentValues.getIndexedArgumentValue(i);
+-                    if ("String".equals(argumentValue.getType()) || "java.lang.String".equals(argumentValue.getType())) {
+-                        paramTypes[i] = String.class;
+-                        paramValues[i] = argumentValue.getValue();
+-                    }
+-                    else if ("Integer".equals(argumentValue.getType()) || "java.lang.Integer".equals(argumentValue.getType())) {
+-                        paramTypes[i] = Integer.class;
+-                        paramValues[i] = Integer.valueOf((String) argumentValue.getValue());
+-                    }
+-                    else if ("int".equals(argumentValue.getType())) {
+-                        paramTypes[i] = int.class;
+-                        paramValues[i] = Integer.valueOf((String) argumentValue.getValue()).intValue();
+-                    }
+-                    else {
+-                        paramTypes[i] = String.class;
+-                        paramValues[i] = argumentValue.getValue();
+-                    }
+-                }
+-                try {
+-                    con = clz.getConstructor(paramTypes);
+-                    obj = con.newInstance(paramValues);
+-                } catch (NoSuchMethodException e) {
+-                    e.printStackTrace();
+-                } catch (SecurityException e) {
+-                    e.printStackTrace();
+-                } catch (IllegalArgumentException e) {
+-                    e.printStackTrace();
+-                } catch (InvocationTargetException e) {
+-                    e.printStackTrace();
+-                }
+-            }
+-            else {
+-                obj = clz.newInstance();
+-            }
+ 
+-        } catch (InstantiationException e) {
+-            e.printStackTrace();
+-        } catch (IllegalAccessException e) {
+-            e.printStackTrace();
+-        } catch (ClassNotFoundException e) {
+-            e.printStackTrace();
+-        }
+-
+-        System.out.println(bd.getId() + " bean created. " + bd.getClassName() + " : " + obj.toString());
+-
+-        return obj;
+-
+-    }
+-
+-    private void handleProperties(BeanDefinition bd, Class<?> clz, Object obj) {
+-        //handle properties
+-        System.out.println("handle properties for bean : " + bd.getId());
+-        PropertyValues propertyValues = bd.getPropertyValues();
+-        if (!propertyValues.isEmpty()) {
+-            for (int i=0; i<propertyValues.size(); i++) {
+-                PropertyValue propertyValue = propertyValues.getPropertyValueList().get(i);
+-                String pName = propertyValue.getName();
+-                String pType = propertyValue.getType();
+-                Object pValue = propertyValue.getValue();
+-                boolean isRef = propertyValue.getIsRef();
+-                Class<?>[] paramTypes = new Class<?>[1];
+-                Object[] paramValues =   new Object[1];
+-                if (!isRef) {
+-                    if ("String".equals(pType) || "java.lang.String".equals(pType)) {
+-                        paramTypes[0] = String.class;
+-                    }
+-                    else if ("Integer".equals(pType) || "java.lang.Integer".equals(pType)) {
+-                        paramTypes[0] = Integer.class;
+-                    }
+-                    else if ("int".equals(pType)) {
+-                        paramTypes[0] = int.class;
+-                    }
+-                    else {
+-                        paramTypes[0] = String.class;
+-                    }
+-
+-                    paramValues[0] = pValue;
+-                }
+-                else { //is ref, create the dependent beans
+-                    try {
+-                        paramTypes[0] = Class.forName(pType);
+-                    } catch (ClassNotFoundException e) {
+-                        e.printStackTrace();
+-                    }
+-                    try {
+-                        paramValues[0] = getBean((String)pValue);
+-                    } catch (BeansException e) {
+-                        e.printStackTrace();
+-                    }
+-                }
+-
+-                String methodName = "set" + pName.substring(0,1).toUpperCase() + pName.substring(1);
+-
+-                Method method = null;
+-                try {
+-                    method = clz.getMethod(methodName, paramTypes);
+-                } catch (NoSuchMethodException e) {
+-                    e.printStackTrace();
+-                } catch (SecurityException e) {
+-                    e.printStackTrace();
+-                }
+-                try {
+-                    method.invoke(obj, paramValues);
+-                } catch (IllegalAccessException e) {
+-                    e.printStackTrace();
+-                } catch (IllegalArgumentException e) {
+-                    e.printStackTrace();
+-                } catch (InvocationTargetException e) {
+-                    e.printStackTrace();
+-                }
+-
+-
+-            }
+-        }
+ 
+-    }
+-}
+\ No newline at end of file
++}
+Index: IOC/src/main/java/com/minis/beans/BeanDefinition.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.beans;\r\n\r\n//scope属性是判断该bean是什么模式（单例或者原型模式）\r\n// lazyInit表示加载时是否需要初始化,initMethodName为初始化话方法的名称\r\n//constructorArgumentValues构造器参数\r\n//dependsOn表示bean与bean间的依赖关系\r\n//beanClass  bean对应的映射类\r\n\r\npublic class BeanDefinition {\r\n    private String id;\r\n    private String className;\r\n\r\n    String SCOPE_SINGLETON = \"singleton\";\r\n    String SCOPE_PROTOTYPE = \"prototype\";\r\n\r\n    private boolean lazyInit = true;\r\n    private String[] dependsOn;\r\n    private ArgumentValues constructorArgumentValues;\r\n\r\n    private PropertyValues propertyValues;\r\n    private String initMethodName;\r\n\r\n    //volatile保证可见性，该私有变量更新时会立刻更新到内存中，禁止指令重排序（位于修饰词后面的语句）\r\n    private volatile Object beanClass;\r\n\r\n    private String scope=SCOPE_SINGLETON;\r\n\r\n\r\n\r\n\r\n\r\n    public BeanDefinition() {\r\n    }\r\n\r\n    public BeanDefinition(String id, String className) {\r\n        this.id = id;\r\n        this.className = className;\r\n    }\r\n\r\n    public ArgumentValues getConstructorArgumentValues() {\r\n        return constructorArgumentValues;\r\n    }\r\n\r\n    public void setConstructorArgumentValues(ArgumentValues constructorArgumentValues) {\r\n        this.constructorArgumentValues = constructorArgumentValues;\r\n    }\r\n\r\n    public boolean isLazyInit() {\r\n        return lazyInit;\r\n    }\r\n\r\n    public void setLazyInit(boolean lazyInit) {\r\n        this.lazyInit = lazyInit;\r\n    }\r\n\r\n    public String[] getDependsOn() {\r\n        return dependsOn;\r\n    }\r\n\r\n    public void setDependsOn(String[] dependsOn) {\r\n        this.dependsOn = dependsOn;\r\n    }\r\n\r\n    public PropertyValues getPropertyValues() {\r\n        return propertyValues;\r\n    }\r\n    public boolean isSingleton() {\r\n        return SCOPE_SINGLETON.equals(scope);\r\n    }\r\n\r\n\r\n    public void setPropertyValues(PropertyValues propertyValues) {\r\n        this.propertyValues = propertyValues;\r\n    }\r\n\r\n    public String getInitMethodName() {\r\n        return initMethodName;\r\n    }\r\n\r\n    public void setInitMethodName(String initMethodName) {\r\n        this.initMethodName = initMethodName;\r\n    }\r\n\r\n    public Object getBeanClass() {\r\n        return beanClass;\r\n    }\r\n\r\n    public void setBeanClass(Object beanClass) {\r\n        this.beanClass = beanClass;\r\n    }\r\n\r\n    public String getScope() {\r\n        return scope;\r\n    }\r\n\r\n    public void setScope(String scope) {\r\n        this.scope = scope;\r\n    }\r\n\r\n    public String getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(String id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getClassName() {\r\n        return className;\r\n    }\r\n\r\n    public void setClassName(String className) {\r\n        this.className = className;\r\n    }\r\n\r\n\r\n    public boolean isPrototype() {\r\n        return SCOPE_PROTOTYPE.equals(scope);\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/beans/BeanDefinition.java b/IOC/src/main/java/com/minis/beans/BeanDefinition.java
+--- a/IOC/src/main/java/com/minis/beans/BeanDefinition.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/beans/BeanDefinition.java	(date 1685177807134)
+@@ -1,11 +1,9 @@
+ package com.minis.beans;
+ 
+-//scope属性是判断该bean是什么模式（单例或者原型模式）
+-// lazyInit表示加载时是否需要初始化,initMethodName为初始化话方法的名称
+-//constructorArgumentValues构造器参数
+-//dependsOn表示bean与bean间的依赖关系
+-//beanClass  bean对应的映射类
+ 
++
++//这个类定义了xml中bean标签内含有的属性以及可选属性
++//注入bean的操作本质是给Bean的各个属性进行赋值
+ public class BeanDefinition {
+     private String id;
+     private String className;
+@@ -13,14 +11,13 @@
+     String SCOPE_SINGLETON = "singleton";
+     String SCOPE_PROTOTYPE = "prototype";
+ 
+-    private boolean lazyInit = true;
++    private boolean lazyInit = false;
+     private String[] dependsOn;
+     private ArgumentValues constructorArgumentValues;
+ 
+     private PropertyValues propertyValues;
+     private String initMethodName;
+ 
+-    //volatile保证可见性，该私有变量更新时会立刻更新到内存中，禁止指令重排序（位于修饰词后面的语句）
+     private volatile Object beanClass;
+ 
+     private String scope=SCOPE_SINGLETON;
+@@ -64,10 +61,6 @@
+     public PropertyValues getPropertyValues() {
+         return propertyValues;
+     }
+-    public boolean isSingleton() {
+-        return SCOPE_SINGLETON.equals(scope);
+-    }
+-
+ 
+     public void setPropertyValues(PropertyValues propertyValues) {
+         this.propertyValues = propertyValues;
+Index: IOC/src/main/java/com/minis/beans/ArgumentValues.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.beans;\r\n\r\nimport java.util.*;\r\n\r\npublic class ArgumentValues {\r\n    //    private  final Map<Integer,ArgumentValue> indexedArgumentValues=new HashMap<>(0);\r\n//    private  final List<ArgumentValue> genericArgumentValues=new LinkedList<>();\r\n    private final List<ArgumentValue> argumentValueList = new ArrayList<ArgumentValue>();\r\n\r\n    public ArgumentValues() {\r\n    }\r\n\r\n    public void addArgumentValue( ArgumentValue newValue) {\r\n        this.argumentValueList.add( newValue);\r\n\r\n    }\r\n\r\n    //    public boolean hasIndexedArgumentValue(int index){\r\n//        return this.argumentValueList.containsValue(index);\r\n//\r\n//    }\r\n    public ArgumentValue getIndexedArgumentValue(int index) {\r\n        ArgumentValue argumentValue = this.argumentValueList.get(index);\r\n        return argumentValue;\r\n    }\r\n\r\n//    public void addGenericArgumentValue(Object value, String type) {\r\n//        this.argumentValueList.add(new ArgumentValue(value, type));\r\n//\r\n//    }\r\n\r\n    //    private void  addGenericArgumentValue(ArgumentValue newValue){\r\n//        if (newValue.getName()!=null){\r\n//            for (Iterator<ArgumentValue> it=this.argumentValueList.iterator(); it.hasNext();){\r\n//                ArgumentValue currentValue=it.next();\r\n//                if (newValue.getName().equals(currentValue.getName())){\r\n//                    it.remove();\r\n//                }\r\n//            }\r\n//\r\n//        }\r\n//        this.genericArgumentValues.add(newValue);\r\n//    }\r\n//    public ArgumentValue getGenericArgumentValue(String requiredName){\r\n//        for (ArgumentValue valueHolder:this.genericArgumentValues){\r\n//            if (valueHolder.getName() !=null &&\r\n//                    (requiredName==null|| !valueHolder.getName().equals(requiredName))){\r\n//                continue;\r\n//            }\r\n//            return valueHolder;\r\n//        }\r\n//        return null;\r\n//\r\n//    }\r\n    public int getArgumentCount() {\r\n        return this.argumentValueList.size();\r\n    }\r\n\r\n    public boolean isEmpty() {\r\n        return this.argumentValueList.isEmpty();\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/beans/ArgumentValues.java b/IOC/src/main/java/com/minis/beans/ArgumentValues.java
+--- a/IOC/src/main/java/com/minis/beans/ArgumentValues.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/beans/ArgumentValues.java	(date 1685177928266)
+@@ -2,64 +2,27 @@
+ 
+ import java.util.*;
+ 
++//参数值内不止一个，所以需要集合类
+ public class ArgumentValues {
+-    //    private  final Map<Integer,ArgumentValue> indexedArgumentValues=new HashMap<>(0);
+-//    private  final List<ArgumentValue> genericArgumentValues=new LinkedList<>();
+     private final List<ArgumentValue> argumentValueList = new ArrayList<ArgumentValue>();
+ 
+     public ArgumentValues() {
+     }
+ 
+-    public void addArgumentValue( ArgumentValue newValue) {
+-        this.argumentValueList.add( newValue);
+-
++    public void addArgumentValue(ArgumentValue argumentValue) {
++        this.argumentValueList.add(argumentValue);
+     }
+ 
+-    //    public boolean hasIndexedArgumentValue(int index){
+-//        return this.argumentValueList.containsValue(index);
+-//
+-//    }
+     public ArgumentValue getIndexedArgumentValue(int index) {
+         ArgumentValue argumentValue = this.argumentValueList.get(index);
+         return argumentValue;
+     }
+ 
+-//    public void addGenericArgumentValue(Object value, String type) {
+-//        this.argumentValueList.add(new ArgumentValue(value, type));
+-//
+-//    }
+-
+-    //    private void  addGenericArgumentValue(ArgumentValue newValue){
+-//        if (newValue.getName()!=null){
+-//            for (Iterator<ArgumentValue> it=this.argumentValueList.iterator(); it.hasNext();){
+-//                ArgumentValue currentValue=it.next();
+-//                if (newValue.getName().equals(currentValue.getName())){
+-//                    it.remove();
+-//                }
+-//            }
+-//
+-//        }
+-//        this.genericArgumentValues.add(newValue);
+-//    }
+-//    public ArgumentValue getGenericArgumentValue(String requiredName){
+-//        for (ArgumentValue valueHolder:this.genericArgumentValues){
+-//            if (valueHolder.getName() !=null &&
+-//                    (requiredName==null|| !valueHolder.getName().equals(requiredName))){
+-//                continue;
+-//            }
+-//            return valueHolder;
+-//        }
+-//        return null;
+-//
+-//    }
+     public int getArgumentCount() {
+-        return this.argumentValueList.size();
++        return (this.argumentValueList.size());
+     }
+ 
+     public boolean isEmpty() {
+-        return this.argumentValueList.isEmpty();
+-
++        return (this.argumentValueList.isEmpty());
+     }
+-
+-
+-}
++}
+\ No newline at end of file
+Index: IOC/src/main/java/com/minis/beans/PropertyValues.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.minis.beans;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n\r\npublic class PropertyValues{\r\n    private final List<PropertyValue> propertyValueList;\r\n\r\n    public PropertyValues() {\r\n        this.propertyValueList = new ArrayList<PropertyValue>(10);\r\n    }\r\n\r\n    public List<PropertyValue> getPropertyValueList() {\r\n        return this.propertyValueList;\r\n    }\r\n\r\n    public int size() {\r\n        return this.propertyValueList.size();\r\n    }\r\n\r\n    public void addPropertyValue(PropertyValue pv) {\r\n        this.propertyValueList.add(pv);\r\n    }\r\n\r\n//\tpublic void addPropertyValue(String propertyType, String propertyName, Object propertyValue) {\r\n//\t\taddPropertyValue(new PropertyValue(propertyType, propertyName, propertyValue));\r\n//\t}\r\n\r\n    public void removePropertyValue(PropertyValue pv) {\r\n        this.propertyValueList.remove(pv);\r\n    }\r\n\r\n    public void removePropertyValue(String propertyName) {\r\n        this.propertyValueList.remove(getPropertyValue(propertyName));\r\n    }\r\n\r\n\r\n    public PropertyValue[] getPropertyValues() {\r\n        return this.propertyValueList.toArray(new PropertyValue[this.propertyValueList.size()]);\r\n    }\r\n\r\n    public PropertyValue getPropertyValue(String propertyName) {\r\n        for (PropertyValue pv : this.propertyValueList) {\r\n            if (pv.getName().equals(propertyName)) {\r\n                return pv;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public Object get(String propertyName) {\r\n        PropertyValue pv = getPropertyValue(propertyName);\r\n        return (pv != null ? pv.getValue() : null);\r\n    }\r\n\r\n    public boolean contains(String propertyName) {\r\n        return (getPropertyValue(propertyName) != null);\r\n    }\r\n\r\n    public boolean isEmpty() {\r\n        return this.propertyValueList.isEmpty();\r\n    }\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/IOC/src/main/java/com/minis/beans/PropertyValues.java b/IOC/src/main/java/com/minis/beans/PropertyValues.java
+--- a/IOC/src/main/java/com/minis/beans/PropertyValues.java	(revision 8c906d4daa57f55de1be222f0a01279a2c1df0df)
++++ b/IOC/src/main/java/com/minis/beans/PropertyValues.java	(date 1685177807668)
+@@ -3,65 +3,72 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-
+-public class PropertyValues{
++//xml中property标签的属性集合类
++public class PropertyValues {
++    //使用final修饰的List容器
+     private final List<PropertyValue> propertyValueList;
+ 
++    //用ArrayList再装list
+     public PropertyValues() {
+-        this.propertyValueList = new ArrayList<PropertyValue>(10);
++        this.propertyValueList = new ArrayList<>(0);
+     }
+ 
++    //获取list
+     public List<PropertyValue> getPropertyValueList() {
+         return this.propertyValueList;
++
+     }
+ 
++    //判断list的长度
+     public int size() {
+         return this.propertyValueList.size();
++
+     }
+ 
++    //添加属性值
+     public void addPropertyValue(PropertyValue pv) {
+         this.propertyValueList.add(pv);
+     }
+ 
+-//	public void addPropertyValue(String propertyType, String propertyName, Object propertyValue) {
+-//		addPropertyValue(new PropertyValue(propertyType, propertyName, propertyValue));
+-//	}
++    //添加属性值
++    public void addPropertyValue(String propertyName, Object propertyValue) {
++        addPropertyValue(new PropertyValue(propertyName, propertyValue));
++    }
+ 
+-    public void removePropertyValue(PropertyValue pv) {
+-        this.propertyValueList.remove(pv);
+-    }
++
+ 
++    //删除属性值
+     public void removePropertyValue(String propertyName) {
+         this.propertyValueList.remove(getPropertyValue(propertyName));
+     }
+-
+-
+-    public PropertyValue[] getPropertyValues() {
++    //获取多个属性值返回一个数组
++    public PropertyValue[] getPropertyValues(String propertyName){
+         return this.propertyValueList.toArray(new PropertyValue[this.propertyValueList.size()]);
+     }
+ 
+-    public PropertyValue getPropertyValue(String propertyName) {
+-        for (PropertyValue pv : this.propertyValueList) {
++    //获取属性值列表内的属性
++    public   PropertyValue getPropertyValue(String propertyName) {
++        for (PropertyValue pv:this.propertyValueList){
+             if (pv.getName().equals(propertyName)) {
+                 return pv;
+             }
+         }
+-        return null;
++    return null;
+     }
+-
+-    public Object get(String propertyName) {
+-        PropertyValue pv = getPropertyValue(propertyName);
+-        return (pv != null ? pv.getValue() : null);
+-    }
++    //获取属性值value 并判空
++    public  Object get(String propertyName){
++        PropertyValue pv=getPropertyValue(propertyName);
++        return pv!=null?pv.getValue():null;
+ 
+-    public boolean contains(String propertyName) {
+-        return (getPropertyValue(propertyName) != null);
++    }
++    //判断是否含有属性名
++    public boolean contains(String propertyName){
++        return getPropertyValue(propertyName)!=null;
+     }
+-
+-    public boolean isEmpty() {
++    //判断集合是否为空
++    public boolean isEmpty(){
+         return this.propertyValueList.isEmpty();
+     }
+ 
+ 
+ }
+-
