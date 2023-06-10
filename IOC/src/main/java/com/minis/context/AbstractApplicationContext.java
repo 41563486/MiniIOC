@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * @author 彼方
+ */
 public abstract class AbstractApplicationContext implements ApplicationContext {
     private Environment environment;
     private final List<BeanFactoryPostProcessor> beanFactoryPostProcessors = new ArrayList<>();
@@ -27,6 +30,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
         return this.beanFactoryPostProcessors;
     }
 
+    @Override
     public void refresh() throws BeansException, IllegalStateException {
         postProcessBeanFactory(getBeanFactory());
         registerBeanPostProcessors(getBeanFactory());

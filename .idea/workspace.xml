@@ -22,106 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="IOC5版 次">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/_2023_5_27_16_59____.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/_2023_6_2_17_12____.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_5_27_16_59_取消提交了更改_[更改]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/ClassPathXmlApplicationContext.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/Test1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_6_2_17_12_取消提交了更改_[更改]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/bean.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/ClassPathXmlApplicationContext_fast.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/SimpleBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/beans/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/context/ClassPathXmlApplicationContext.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/ClassPathXmlResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/core/Resource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/AServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/classes/java/main/com/minis/test/Test1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/resources/main/bean.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/out/production/resources/bean.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/BeanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/BeansException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlApplicationContext_fast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/ClassPathXmlResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/Resource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/SimpleBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/ApplicationEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/BeanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/test/BeanException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/src/main/resources/bean.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/BeanException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext_fast.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlApplicationContext_fast123.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/ClassPathXmlResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/Resource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/SimpleBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/ArgumentValue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/ArgumentValues.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanDefinitionRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeanException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/BeansException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/DefaultSingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/NoSuchBeanDefinitionException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/PropertyValue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/PropertyValues.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SimpleBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/SingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/BeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/NoSuchBeanDefinitionException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/annotation/Autowired.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/AutowireCapableBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/BeanDefinition.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/BeanFactoryPostProcessor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/BeanPostProcessor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/ConstructorArgumentValue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/ConstructorArgumentValues.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/config/SingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/support/AbstractBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/support/BeanDefinitionRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/support/DefaultSingletonBeanRegistry.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/support/SimpleBeanFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/beans/factory/xml/XmlBeanDefinitionReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ApplicationEvent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/context/ApplicationEventPublisher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/BaseBaseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/BaseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/com/minis/test/BeanException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IOC/target/classes/main/resources/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bean.xml" afterDir="false" />
+    <list default="true" id="164c1d98-3da7-498d-8928-84315ac6d1f7" name="更改" comment="IOC5版 注释完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/ListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/ListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConfigurableListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/config/ConfigurableListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ApplicationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ContextRefreshEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/ContextRefreshEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/SimpleApplicationEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/SimpleApplicationEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/EnvironmentCapable.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/EnvironmentCapable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/PropertyResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/core/env/PropertyResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/IOC/src/main/java/com/minis/context/AbstractApplicationContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +63,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;7245a636843f38ae56d5862d502a4303&quot;
   }
 }</component>
@@ -250,7 +154,9 @@
       <workItem from="1685860975351" duration="7742000" />
       <workItem from="1686009858606" duration="2733000" />
       <workItem from="1686041439726" duration="7351000" />
-      <workItem from="1686127211023" duration="10990000" />
+      <workItem from="1686127211023" duration="11356000" />
+      <workItem from="1686312447983" duration="95000" />
+      <workItem from="1686312554458" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master' into part2&#10;&#10;# Conflicts:&#10;#&#9;IOC/src/main/java/com/minis/beans/SimpleBeanFactory.java">
       <created>1685177994721</created>
@@ -329,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686055955145</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="IOC5版 注释完善">
+      <created>1686145218243</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686145218243</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +266,8 @@
     <MESSAGE value="IOC4版 注释完善" />
     <MESSAGE value="IOC5版" />
     <MESSAGE value="IOC5版 次" />
-    <option name="LAST_COMMIT_MESSAGE" value="IOC5版 次" />
+    <MESSAGE value="IOC5版 注释完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="IOC5版 注释完善" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
